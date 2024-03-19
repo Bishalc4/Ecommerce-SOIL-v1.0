@@ -1,4 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.h1{
+    color: black;
+}
+
+.header{
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .logo{
     height: 80px;
     width: auto;
+}
+
+.logo-container{
+    display: flex;
+    align-items: center;
 }
