@@ -9,7 +9,6 @@ function Header() {
         <div className="header">
             <div className="logo-container">
                 <img alt="logo" src={logo} className="logo"></img>
-                <h1>SOIL</h1>
             </div>
             <Search />
             <Profile />

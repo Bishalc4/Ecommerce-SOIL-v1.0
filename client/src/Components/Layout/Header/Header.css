@@ -3,19 +3,17 @@
     padding: 0;
 }
 
-.h1{
-    color: black;
-}
-
 .header{
     padding: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-left: 3%;
+    margin-right: 3%;
 }
 
 .logo{
-    height: 80px;
+    height: 5em;
     width: auto;
 }
 
