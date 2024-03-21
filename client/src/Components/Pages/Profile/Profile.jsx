@@ -6,8 +6,8 @@ import "./Profile.css"
 function Profile() {
     return(
         <>
-            <Button variant="light">
-                <BsPersonCircle />
+            <Button variant="light" className='profile-button'>
+                <BsPersonCircle className='profile-icon'/>
                 Log in/Sign up
             </Button>
         </>

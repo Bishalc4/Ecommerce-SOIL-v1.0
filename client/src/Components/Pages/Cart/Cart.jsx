@@ -10,7 +10,7 @@ function Cart() {
 
     return(
         <>
-            <Button variant="light">
+            <Button variant="light" className='cart-button'>
                 <FaShoppingCart />
                 ${totalCost}
             </Button>
