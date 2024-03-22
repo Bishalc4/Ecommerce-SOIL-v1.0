@@ -1,4 +1,13 @@
-.cart-button{
+.cart-button-container{
     display: flex;
     align-items: center;
+    background-color: inherit;
+}
+
+.total-cost{
+    background-color: inherit;
+}
+
+.cart-button{
+    height: max-content;
 }

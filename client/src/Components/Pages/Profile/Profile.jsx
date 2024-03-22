@@ -7,8 +7,10 @@ function Profile() {
     return(
         <>
             <Button variant="light" className='profile-button'>
-                <BsPersonCircle className='profile-icon'/>
-                Log in/Sign up
+                <div className='profile-icon-container'>
+                    <BsPersonCircle className='profile-icon'/>
+                    <div className='text'>Log in/Sign up</div>
+                </div>
             </Button>
         </>
     );

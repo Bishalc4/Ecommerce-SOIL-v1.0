@@ -6,13 +6,16 @@ import "./Cart.css"
 
 function Cart() {
 
-    const [totalCost, setTotalCost] = useState(0);
+    const [totalCost, setTotalCost] = useState(13.50);
+
 
     return(
         <>
             <Button variant="light" className='cart-button'>
-                <FaShoppingCart />
-                ${totalCost}
+                <div className='cart-button-container'>
+                    <FaShoppingCart />
+                    <div className='total-cost'>${totalCost}</div>
+                </div>
             </Button>
         </>
     );
