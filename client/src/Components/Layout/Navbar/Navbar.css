@@ -1,6 +1,35 @@
 .navbar{
-    margin-left: 2%;
-    margin-right: 2%;
-    padding-left: 20px;
-    padding-right: 20px;
+    width: 94%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 3%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+.navbar ul{
+    flex: 1;
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.navbar a{
+    color: black;
+    text-decoration: none;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+.navbar a:hover{
+    background-color: #f1f1f1;
+    text-decoration: underline;
+}
+.navbar a:hover span{
+    background-color: #f1f1f1;
 }

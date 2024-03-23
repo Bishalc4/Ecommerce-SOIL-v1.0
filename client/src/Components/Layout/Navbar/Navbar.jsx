@@ -3,16 +3,26 @@ import { FiMenu } from "react-icons/fi";
 
 function Navbar() {
     return(
-        <div className="navbar">
-            <a href="#">
-                <FiMenu />
-                Browse
-            </a>
-            <a href="#">Specials</a>
-            <a href="#">Diet/Nutrition</a>
-            <a href="#">Grow It Yourself</a>
-            <a href="#">About</a>
-        </div>
+        <nav className="navbar">
+            <ul>
+                <li><a href="#">
+                    <FiMenu />
+                    <span>Browse</span>
+                </a></li>
+                <li><a href="#">
+                    <span>Specials</span>
+                </a></li>
+                <li><a href="#">
+                    <span>Diet/Nutrition</span>
+                </a></li>
+                <li><a href="#">
+                    <span>Grow It Yourself</span>
+                </a></li>
+                <li><a href="#">
+                    <span>About</span>
+                </a></li>
+            </ul>
+        </nav>
     );
 }
 

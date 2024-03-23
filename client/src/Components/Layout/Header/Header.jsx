@@ -14,10 +14,9 @@ function Header() {
 
                 <div className="site-buttons">
                     <Profile />
-                    <Cart />
+                    <Cart className="cart-button"/>
                 </div>
             </header>
-            <hr></hr>
         </>
     );
 }
