@@ -5,7 +5,6 @@ import Footer from './Components/Layout/Footer/Footer.jsx'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
-
   return (
     <>
       <Header />

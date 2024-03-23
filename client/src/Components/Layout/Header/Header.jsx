@@ -6,7 +6,7 @@ import Cart from "../../Pages/Cart/Cart.jsx";
 
 function Header() {
     return(
-        <div className="header">
+        <header className="header">
             <div className="logo-container">
                 <img alt="logo" src={logo} className="logo"></img>
             </div>
@@ -17,7 +17,7 @@ function Header() {
                 <Profile />
                 <Cart />
             </div>
-        </div>
+        </header>
     );
 }
 

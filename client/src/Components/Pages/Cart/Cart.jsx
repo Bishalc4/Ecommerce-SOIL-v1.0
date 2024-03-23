@@ -6,7 +6,7 @@ import "./Cart.css"
 
 function Cart() {
 
-    const [totalCost, setTotalCost] = useState(13.50);
+    const [totalCost, setTotalCost] = useState(0);
 
 
     return(
