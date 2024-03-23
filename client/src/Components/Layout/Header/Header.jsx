@@ -1,23 +1,24 @@
-import logo from "../../../assets/Logo.svg";
-import "./Header.css";
-import Search from "./Search/Search.jsx"
-import Profile from "../../Pages/Profile/Profile.jsx";
-import Cart from "../../Pages/Cart/Cart.jsx";
+import "./Header.css"
+import logo from "../../../assets/SOIL-logo.svg";
+import Profile from "../../../Pages/Profile/Profile.jsx";
+import Cart from "../../../Pages/Cart/Cart.jsx";
+import Search from "../../../Pages/Search/Search.jsx";
 
 function Header() {
     return(
-        <header className="header">
-            <div className="logo-container">
-                <img alt="logo" src={logo} className="logo"></img>
-            </div>
-            <div className="search-container">
+        <>
+            <header className="header">
+                <img src={logo} alt="SOIL_Logo" className="logo"/>
+
                 <Search />
-            </div>
-            <div className="profile-cart-buttons-container">
-                <Profile />
-                <Cart />
-            </div>
-        </header>
+
+                <div className="site-buttons">
+                    <Profile />
+                    <Cart />
+                </div>
+            </header>
+            <hr></hr>
+        </>
     );
 }
 
