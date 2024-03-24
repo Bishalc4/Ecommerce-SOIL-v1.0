@@ -21,7 +21,7 @@ function Header(props) {
                 <div className="site-buttons">
                     {isLoggedIn ? (
                         <Link to="/profile">
-                            
+                            <Profile loggedIn={isLoggedIn}/>
                         </Link>
                     ): (
                         <Link to="/login">
