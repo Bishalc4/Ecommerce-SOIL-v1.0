@@ -8,7 +8,10 @@ function Post() {
             <button className="profile-button">
                 <IoPersonSharp className="profile-icon"/>
             </button>
-            <p className="profile-text">Sign Up/Log In</p>
+            <div className="profile-button-text">
+                <p className="profile-text">Log In or Sign Up</p>
+                <p className="profile-my-profile"><b>My Profile</b></p>
+            </div>
         </div>
     );
 }
