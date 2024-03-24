@@ -13,22 +13,22 @@ function Navbar() {
                     </Link>
                 </li>
                 <li>
-                    <Link to="/">
+                    <Link to="/specials">
                         <span>Specials</span>
                     </Link>
                 </li>
                 <li>
-                    <Link to="/">
+                    <Link to="/dietnutrition">
                         <span>Diet/Nutrition</span>
                     </Link>
                 </li>
                 <li>
-                    <Link to="/">
+                    <Link to="/growityourself">
                         <span>Grow It Yourself</span>
                     </Link>
                 </li>
                 <li>
-                    <Link to="/">
+                    <Link to="/about">
                         <span>About</span>
                     </Link>
                 </li>

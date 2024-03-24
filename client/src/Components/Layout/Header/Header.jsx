@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types'
 import "./Header.css"
 import logo from "../../../assets/SOIL-logo.svg"
@@ -11,12 +12,22 @@ function Header(props) {
     return(
         <>
             <header className="header">
-                <img src={logo} alt="SOIL_Logo" className="logo"/>
+                <Link to="/">
+                    <img src={logo} alt="SOIL_Logo" className="logo"/>
+                </Link>
 
                 <Search />
 
                 <div className="site-buttons">
-                    <Profile loggedIn={isLoggedIn}/>
+                    {isLoggedIn ? (
+                        <Link to="/profile">
+                            
+                        </Link>
+                    ): (
+                        <Link to="/login">
+                            <Profile loggedIn={isLoggedIn}/>
+                        </Link>
+                    )}
                     <Cart className="cart-button"/>
                 </div>
             </header>
