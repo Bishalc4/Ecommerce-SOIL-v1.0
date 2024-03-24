@@ -5,7 +5,7 @@ import Navbar from './Components/Layout/Navbar/Navbar.jsx'
 function App() {
   return (
     <>
-      <Header />
+      <Header isLoggedIn={true} />
       <Navbar />
       <hr></hr>
     </>
