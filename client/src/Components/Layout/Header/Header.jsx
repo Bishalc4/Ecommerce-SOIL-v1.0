@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import "./Header.css"
 import logo from "../../../assets/SOIL-logo.svg"
@@ -11,7 +11,7 @@ function Header(props) {
 
     return(
         <>
-            <header className="header">
+            <header className="site-header">
                 <Link to="/">
                     <img src={logo} alt="SOIL_Logo" className="logo"/>
                 </Link>

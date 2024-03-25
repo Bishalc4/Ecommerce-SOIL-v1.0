@@ -13,7 +13,6 @@ function App() {
     <>
       {!isLoginPage && <Header isLoggedIn={true} />}
       {!isLoginPage && <Navbar />}
-      <hr></hr>
 
       <Routes>
         <Route path="/about" element={<About />} />

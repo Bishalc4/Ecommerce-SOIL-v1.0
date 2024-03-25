@@ -1,8 +1,10 @@
+import AuthHeader from "../../Components/Layout/Auth-Header/AuthHeader";
 
 function Login() {
     return(
         <>
-            <h2>Login</h2>
+            <AuthHeader />
+            <hr></hr>
         </>
     );
 }
