@@ -1,7 +1,7 @@
 import "./Cart.css";
 import { BsCart3 } from "react-icons/bs";
 
-function Post() {
+function Cart() {
     return(
         <div>
             <button className="cart-button">
@@ -14,4 +14,4 @@ function Post() {
     );
 }
 
-export default Post;
+export default Cart;

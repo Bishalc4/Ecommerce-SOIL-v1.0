@@ -1,8 +1,5 @@
-export * from "./About/About"
-export * from "./Cart/Cart"
-export * from "./DietNutrition/DietNutrition"
-export * from "./GrowItYourself/GrowItYourself"
-export * from "./Login/Login"
-export * from "./Profile/Profile"
-export * from "./Search/Search"
-export * from "./Specials/Specials"
+export { default as Specials } from "./Specials/Specials";
+export { default as DietNutrition } from "./DietNutrition/DietNutrition";
+export { default as GrowItYourself } from "./GrowItYourself/GrowItYourself";
+export { default as About } from "./About/About";
+export { default as Login } from "./Login/Login";
