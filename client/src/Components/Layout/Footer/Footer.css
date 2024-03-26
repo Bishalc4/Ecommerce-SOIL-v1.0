@@ -2,10 +2,10 @@
     padding: 20px;
 }
 
-.Organic-Product-column,
-.Help-Column,
-.Diet-Nutrition-Column,
-.Helpful-Link-Column {
+.organic-product-column,
+.help-column,
+.diet-nutrition-column,
+.helpful-link-column {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
