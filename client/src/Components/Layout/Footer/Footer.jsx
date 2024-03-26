@@ -11,7 +11,7 @@ function Footer() {
     <footer>
       <div className="footer">
         <div className="footer-padding">
-          <div className="Organic-Product-column">
+          <div className="organic-product-column">
               <h4>Organic Product</h4>
               <Link to="/">
                 <p>Employee database</p>
@@ -27,7 +27,7 @@ function Footer() {
               </Link>
           </div>
 
-          <div className="Help-Column">
+          <div className="help-column">
               <h4>Help</h4>
               <Link to="/">
                 <p>FAQ</p>
@@ -40,7 +40,7 @@ function Footer() {
               </Link>
           </div>
 
-          <div className="Diet-Nutrition-Column">
+          <div className="diet-nutrition-column">
               <h4>About SOIL</h4>
               <Link to="/">
                 <p>About us</p>
@@ -53,7 +53,7 @@ function Footer() {
               </Link>
           </div>
 
-          <div className="Helpful-Link-Column">
+          <div className="helpful-link-column">
               <h4>Helpful Links</h4>
               <Link to="/">
                 <p>About us</p>
@@ -77,7 +77,6 @@ function Footer() {
               ecosystem that values quality produce and promotes environmental
               stewardship for all.
             </p>
-
           </div>
 
           <hr />

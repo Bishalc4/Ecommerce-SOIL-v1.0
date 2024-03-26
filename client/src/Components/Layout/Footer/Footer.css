@@ -57,19 +57,19 @@
     margin: 0.9rem 0;
 }
 
-.Organic-Product-column p,
-.Help-Column p,
-.Diet-Nutrition-Column p,
-.Helpful-Link-Column p {
+.organic-product-column p,
+.help-column p,
+.diet-nutrition-column p,
+.helpful-link-column p {
     font-size: 13px;
     line-height: 14px;
     margin-bottom: 0.9rem;
 }
 
-.Organic-Product-column h4,
-.Help-Column h4,
-.Diet-Nutrition-Column h4,
-.Helpful-Link-Column h4 {
+.organic-product-column h4,
+.help-column h4,
+.diet-nutrition-column h4,
+.helpful-link-column h4 {
     font-size: 16px;
     line-height: 19px;
     margin-bottom: 0.9rem;
