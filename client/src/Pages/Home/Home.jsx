@@ -1,4 +1,4 @@
-import "./Home.css"
+import "./Home.scss"
 
 //This component is for the home/landing page
 function Home() {
