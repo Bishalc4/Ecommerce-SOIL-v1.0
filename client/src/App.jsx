@@ -9,7 +9,7 @@ import './App.css'
 function App() {
 
   const location = useLocation();
-  const isLoginPage = location.pathname === '/login';
+  const isLoginPage = (location.pathname === '/login' || location.pathname === '/signup');
 
   return (
     <>

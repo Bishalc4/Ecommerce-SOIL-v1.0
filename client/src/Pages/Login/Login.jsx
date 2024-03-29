@@ -1,4 +1,5 @@
-import AuthHeader from "../../Components/Layout/Auth-Header/AuthHeader";
+import { Link } from "react-router-dom"
+import AuthHeader from "../../Components/Layout/Auth-Header/AuthHeader"
 import "./Login.css"
 
 //Users will use this page to login
@@ -7,7 +8,7 @@ function Login() {
         <div className="login-container">
             <AuthHeader />
             <hr></hr>
-            <form>
+            <form className="form-container">
                 <div className="form-group">
                     <label className="label-control">Username</label>
                     <input className="input-control" />
@@ -21,8 +22,13 @@ function Login() {
                 <div className="form-group">
                     <input type="submit" className="btn btn-primary"/>
                 </div>
-
             </form>
+            <div className="sign-up-link-container">
+                <p>Dont have an account?</p>
+                <Link to="/signup">
+                    <p>Sign Up</p>
+                </Link>
+            </div>
         </div>
     );
 }

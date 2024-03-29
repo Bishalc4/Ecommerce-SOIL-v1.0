@@ -1,22 +1,29 @@
 .login-container{
     width: 94%;
     padding: 0px 3%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-form {
-    width: 1300px;
-    text-align: center;
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-
 .form-group {
+    display: flex;
+    flex-direction: column;
     margin-bottom: 20px;
 }
-
 .label-control {
     display: block;
     margin: 5px;
 }
-
 .input-control {
    border-radius: 3px;
    width: 250px;
+}
+.sign-up-link-container{
+    display: flex;
+    align-items: center;
 }
