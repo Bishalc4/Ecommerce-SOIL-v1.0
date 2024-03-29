@@ -1,27 +1,12 @@
 import { Link } from 'react-router-dom';
-
-import Facebook from "../../../assets/Facebook.svg";
-import Linkedin from "../../../assets/Linkedin.svg";
-import Twitter from "../../../assets/Twitter.svg";
-import Youtube from "../../../assets/Youtube.svg";
+import { FaFacebook, FaYoutube } from "react-icons/fa";
+import { AiFillInstagram } from "react-icons/ai";
+import { FaSquareXTwitter } from "react-icons/fa6";
 import "./Footer.scss";
 
 function Footer() {
   return (
     <footer className='footer-container'>
-        <div className="help-column" id="footer-column">
-            <h4>Help</h4>
-            <Link to="/">
-              <p>FAQ</p>
-            </Link>
-            <Link to="/">
-              <p>Blog</p>
-            </Link>
-            <Link to="/">
-              <p>Support</p>
-            </Link>
-        </div>
-
         <div className="about-links-container" id="footer-column">
             <h4>About SOIL</h4>
             <Link to="/">
@@ -32,6 +17,19 @@ function Footer() {
             </Link>
             <Link to="/">
               <p>Contact us</p>
+            </Link>
+        </div>
+
+        <div className="help-column" id="footer-column">
+            <h4>Help</h4>
+            <Link to="/">
+              <p>FAQ</p>
+            </Link>
+            <Link to="/">
+              <p>Blog</p>
+            </Link>
+            <Link to="/">
+              <p>Support</p>
             </Link>
         </div>
 
@@ -60,16 +58,24 @@ function Footer() {
           </p>
           <div className="social-media-container">
             <Link to="#">
-              <img src={Facebook} alt="Facebook_Logo" id="social-media-logo" />
+              <div id="logo-container">
+                <FaFacebook id="social-media-logo" />
+              </div>
             </Link>
             <Link to="#">
-              <img src={Twitter} alt="X_Logo" id="social-media-logo" />
+              <div id="logo-container">
+                <FaSquareXTwitter id="social-media-logo" />
+              </div>
             </Link>
             <Link to="#">
-              <img src={Linkedin} alt="Linkedin_Logo" id="social-media-logo" />
+              <div id="logo-container">
+                <AiFillInstagram id="social-media-logo" />
+              </div>
             </Link>
             <Link to="#">
-              <img src={Youtube} alt="Linkedin_Logo" id="social-media-logo" />
+              <div id="logo-container">
+                <FaYoutube id="social-media-logo" />
+              </div>
             </Link>
           </div>
         </div>
