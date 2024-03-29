@@ -1,5 +1,6 @@
 import "./DietNutrition.css"
 
+//Page for diet and nutrition
 function DietNutrition(){
     return(
         <div className="diet-nutrition-container">

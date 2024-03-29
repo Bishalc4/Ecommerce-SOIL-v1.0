@@ -1,5 +1,6 @@
 import "./GrowItYourself.css"
 
+//The DIY grow food organically page
 function GrowItYourself(){
     return(
         <div className="grow-it-yourself-container">

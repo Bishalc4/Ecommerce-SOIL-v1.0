@@ -1,5 +1,6 @@
 import "./NotFound.css"
 
+//NotFound page when the route cannot be found
 function NotFound() {
     return(
         <div className="not-found-container">
