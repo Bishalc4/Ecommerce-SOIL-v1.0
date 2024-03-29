@@ -1,0 +1,59 @@
+@import "../../../common.scss";
+
+$footer-color: rgb(23,28,31);
+$footer-text-color: white;
+
+.footer-container{
+    display: flex;
+    flex-wrap: wrap;
+    text-align: left;
+    justify-content: space-between;
+    width: $common-width;
+    padding: $common-padding;
+    text-decoration: none;
+    background-color: $footer-color;
+    color: $footer-text-color;
+}
+.footer-container h4{
+    font-size: 17px;
+    background-color: $footer-color;
+}
+.footer-container a {
+    text-decoration: none;
+    color: $footer-text-color;
+    background-color: $footer-color;
+}
+.footer-container p {
+    font-size: 13px;
+    background-color: $footer-color;
+}
+#footer-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 150px;
+    background-color: $footer-color;
+}
+.subscribe-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 20px;
+    width: 300px;
+    background-color: $footer-color;
+}
+.social-media-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    background-color: $footer-color;
+}
+#social-media-logo {
+    width: 1.75em;
+    height: auto;
+}
+.subscribe-container input[type="email"] {
+    border: none;
+    padding: 5px;
+}
