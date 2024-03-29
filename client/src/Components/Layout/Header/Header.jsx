@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
-import "./Header.css"
+import "./Header.scss"
 import logo from "../../../assets/SOIL-logo.svg"
 import ProfileButton from "../../../Pages/ProfileButton/ProfileButton.jsx"
 import CartButton from "../../../Pages/CartButton/CartButton.jsx"

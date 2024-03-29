@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { FiMenu } from "react-icons/fi";
-import "./Navbar.css"
+import "./Navbar.scss"
 
 function Navbar() {
     return(

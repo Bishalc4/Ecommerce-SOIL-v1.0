@@ -1,9 +1,14 @@
+@import "../../../common.scss";
+
 .site-header{
-    width: 94%;
+    width: $common-width;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0px 3%;
+    padding: $common-padding;
+}
+.site-header a{
+    text-decoration: none;
 }
 .logo{
     width: 200px;
