@@ -1,17 +1,12 @@
-import "./Cart.css";
-import { BsCart3 } from "react-icons/bs";
+import "./Cart.css"
 
+//display a sidebar on the side of the page and on click go to a 'CheckOut' page
 function Cart() {
     return(
-        <div>
-            <button className="cart-button">
-                <div className="cart-button-content">
-                    <BsCart3 className="cart-icon"/>
-                    <p className="cart-total">$0.00</p>
-                </div>
-            </button>
-        </div>
+        <>
+            <h2>Cart Page</h2>
+        </>
     );
 }
 
-export default Cart;
+export default Cart

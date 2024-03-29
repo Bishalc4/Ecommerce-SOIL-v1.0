@@ -17,7 +17,7 @@ function App() {
         <>
           <Header isLoggedIn={true} />
           <Navbar />
-          <AllRoutes />
+          <AllRoutes className="all-routes" />
           <Footer />
         </>
       )}

@@ -1,10 +1,11 @@
+import "./Home.css"
 
 //This component is for the home/landing page
 function Home() {
     return(
-        <>
-            <h2>Home page</h2>
-        </>
+        <div className="home-container">
+            <h1>Home page</h1>
+        </div>
     );
 }
 

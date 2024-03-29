@@ -2,8 +2,8 @@ import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import "./Header.css"
 import logo from "../../../assets/SOIL-logo.svg"
-import Profile from "../../../Pages/Profile/Profile.jsx"
-import Cart from "../../../Pages/Cart/Cart.jsx"
+import ProfileButton from "../../../Pages/ProfileButton/ProfileButton.jsx"
+import CartButton from "../../../Pages/CartButton/CartButton.jsx"
 import Search from "../../../Pages/Search/Search.jsx"
 
 function Header(props) {
@@ -21,14 +21,16 @@ function Header(props) {
                 <div className="site-buttons">
                     {isLoggedIn ? (
                         <Link to="/profile">
-                            <Profile loggedIn={isLoggedIn}/>
+                            <ProfileButton loggedIn={isLoggedIn}/>
                         </Link>
                     ): (
                         <Link to="/login">
-                            <Profile loggedIn={isLoggedIn}/>
+                            <ProfileButton loggedIn={isLoggedIn}/>
                         </Link>
                     )}
-                    <Cart className="cart-button"/>
+                    <Link to="/cart">
+                        <CartButton className="cart-button"/>
+                    </Link>
                 </div>
             </header>
         </>

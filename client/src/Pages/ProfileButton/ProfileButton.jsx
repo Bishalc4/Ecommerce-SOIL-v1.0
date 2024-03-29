@@ -1,9 +1,9 @@
-import "./Profile.css";
+import "./ProfileButton.css";
 import PropTypes from 'prop-types'
 import { IoPersonSharp } from "react-icons/io5";
 
 
-function Profile(props) {
+function ProfileButton(props) {
     const loggedIn = props.loggedIn; 
 
     return(
@@ -22,8 +22,8 @@ function Profile(props) {
         </div>
     );
 }
-Profile.propTypes = {
+ProfileButton.propTypes = {
     loggedIn: PropTypes.bool,
 }
 
-export default Profile;
+export default ProfileButton;
