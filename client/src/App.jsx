@@ -15,12 +15,14 @@ function App() {
     <>
       {!isLoginPage && (
         <>
-          <Header isLoggedIn={true} />
+          <Header isLoggedIn={false} />
           <Navbar />
-          <AllRoutes className="all-routes" />
-          <Footer />
         </>
       )}
+
+      <AllRoutes />
+
+      {!isLoginPage && <Footer />}
     </>
   )
 }
