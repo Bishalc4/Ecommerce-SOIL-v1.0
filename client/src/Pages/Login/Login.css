@@ -2,3 +2,21 @@
     width: 94%;
     padding: 0px 3%;
 }
+form {
+    width: 1300px;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.label-control {
+    display: block;
+    margin: 5px;
+}
+
+.input-control {
+   border-radius: 3px;
+   width: 250px;
+}
