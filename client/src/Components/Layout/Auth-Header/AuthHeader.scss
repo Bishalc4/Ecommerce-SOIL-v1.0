@@ -1,5 +1,7 @@
+@import "../../../common.scss";
+
 .authentication-header{
-    width: 94%;
+    width: $common-width;
     display: flex;
     justify-content: center;
     padding: 14px 3%;

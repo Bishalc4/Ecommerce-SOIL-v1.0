@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 import AuthHeader from "../../Components/Layout/Auth-Header/AuthHeader"
-import "./Login.css"
+import "./Login.scss"
 
 //Users will use this page to login
 function Login() {

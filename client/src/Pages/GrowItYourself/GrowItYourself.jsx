@@ -1,4 +1,4 @@
-import "./GrowItYourself.css"
+import "./GrowItYourself.scss"
 
 //The DIY grow food organically page
 function GrowItYourself(){

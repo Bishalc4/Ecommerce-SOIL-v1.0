@@ -1,4 +1,5 @@
 import AuthHeader from "../../Components/Layout/Auth-Header/AuthHeader";
+import "./SignUp.scss"
 
 function SignUp() {
 

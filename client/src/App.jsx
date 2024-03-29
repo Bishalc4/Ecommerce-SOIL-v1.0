@@ -7,7 +7,7 @@ import AllRoutes from "./Pages/AllRoutes.jsx"
 import './App.css'
 
 function App() {
-
+  
   const location = useLocation();
   const isLoginPage = (location.pathname === '/login' || location.pathname === '/signup');
 

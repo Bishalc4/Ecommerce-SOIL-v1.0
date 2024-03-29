@@ -1,4 +1,4 @@
-import "./Specials.css"
+import "./Specials.scss"
 
 //Special deals page - displays products on sale
 function Specials(){

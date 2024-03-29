@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import logo from "../../../assets/SOIL-logo.svg"
-import "./AuthHeader.css"
+import "./AuthHeader.scss"
 
 function AuthHeader() {
     return(

@@ -1,4 +1,4 @@
-import "./ProfileButton.css";
+import "./ProfileButton.scss";
 import PropTypes from 'prop-types'
 import { IoPersonSharp } from "react-icons/io5";
 

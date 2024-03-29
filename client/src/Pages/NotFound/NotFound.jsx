@@ -1,4 +1,4 @@
-import "./NotFound.css"
+import "./NotFound.scss"
 
 //NotFound page when the route cannot be found
 function NotFound() {

@@ -1,4 +1,4 @@
-import "./CartButton.css";
+import "./CartButton.scss";
 import { BsCart3 } from "react-icons/bs";
 
 //Cart button used in the Header.jsx (header) component 

@@ -1,4 +1,4 @@
-import "./Cart.css"
+import "./Cart.scss"
 
 //display a sidebar on the side of the page and on click go to a 'CheckOut' page
 function Cart() {

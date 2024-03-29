@@ -1,4 +1,4 @@
-import "./DietNutrition.css"
+import "./DietNutrition.scss"
 
 //Page for diet and nutrition
 function DietNutrition(){
