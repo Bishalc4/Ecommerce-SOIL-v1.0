@@ -1,6 +1,7 @@
 import "./CartButton.css";
 import { BsCart3 } from "react-icons/bs";
 
+//Cart button used in the Header.jsx (header) component 
 function CartButton() {
     return(
         <div>
