@@ -13,11 +13,14 @@ function App() {
 
   return (
     <>
-      {!isLoginPage && <Header isLoggedIn={true} />}
-      {!isLoginPage && <Navbar />}
-      {!isLoginPage && <AllRoutes />}
-
-      {!isLoginPage && <Footer />}
+      {!isLoginPage && (
+        <>
+          <Header isLoggedIn={true} />
+          <Navbar />
+          <AllRoutes />
+          <Footer />
+        </>
+      )}
     </>
   )
 }
