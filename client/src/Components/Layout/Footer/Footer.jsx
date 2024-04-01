@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { FaFacebook, FaYoutube } from "react-icons/fa";
 import { AiFillInstagram } from "react-icons/ai";
 import { FaSquareXTwitter } from "react-icons/fa6";
+import ArrowIcon from '../../../assets/Subscribe-submit.svg'
 import "./Footer.scss";
 
 function Footer() {
@@ -48,8 +49,11 @@ function Footer() {
 
         <div className="subscribe-container">
           <h4>Subscribe</h4>
-          <div>
+          <div className='form-submit'>
             <input type="email" placeholder="Email address" name="subscription-email" required />
+            <button type="submit" className="submit-button">
+                <img src={ArrowIcon} alt="Submit" />
+            </button>
           </div>
           <p>
             Hello, we are SOIL. Our goal is to foster a sustainable food
