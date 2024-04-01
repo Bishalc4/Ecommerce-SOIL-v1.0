@@ -15,7 +15,7 @@ function App() {
     <>
       {!isLoginPage && (
         <>
-          <Header isLoggedIn={false} />
+          <Header isLoggedIn={true} />
           <Navbar />
         </>
       )}
