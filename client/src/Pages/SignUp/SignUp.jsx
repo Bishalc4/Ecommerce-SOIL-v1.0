@@ -39,8 +39,13 @@ function SignUp() {
             else {
             alert("Thank you for joining our SOIL community");
 
-            const currDate = new Date(); 
-            const userData = { name: values.name, email: values.email, password: values.password, dateJoined: currDate};
+            const currDate = new Date();
+            const year = currDate.getFullYear();
+            const month = currDate.getMonth() + 1; 
+            const day = currDate.getDate();
+
+
+            const userData = { name: values.name, email: values.email, password: values.password, dateJoined: `${year}-${month}-${day}`}
             const updatedUsers = [...existingUsers, userData];
 
             localStorage.setItem("user", JSON.stringify(values.name));
