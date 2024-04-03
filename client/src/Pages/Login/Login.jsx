@@ -1,35 +1,70 @@
 import { Link } from "react-router-dom"
+import { useState, useEffect} from'react'
 import AuthHeader from "../../Components/Layout/Auth-Header/AuthHeader"
+import validate from "../LoginValidation"
 import "./Login.scss"
 
 //Users will use this page to login
 function Login() {
+    const [values, setValues] = useState({
+        email: '',
+        password: ''
+     })
+
+     const [errors, setError] = useState({});
+
+     function handleSubmit(e) {
+        e.preventDefault();
+        setError(validate(values));
+
+     }
+
+     function handleChange(e) {
+        setValues({...values, [e.target.name]: e.target.value})
+     }
+
+     useEffect(() => {
+        if (Object.keys(errors).length === 0 && (values.email !== "" && values.password !== "")) {
+            const users = JSON.parse(localStorage.getItem("Users"));
+            if (users && users.email === values.email && users.password === values.password) {
+                alert("Logged in successful");
+            } else {
+                alert("Account doesn't exit");
+            }
+        }
+      }, [errors]);
+
     return(
+        <>
+        <AuthHeader />
+        <hr></hr>
         <div className="login-container">
-            <AuthHeader />
-            <hr></hr>
-            <form className="form-container">
-                <div className="form-group">
-                    <label className="label-control">Username</label>
-                    <input className="input-control" />
+            <form className="login-form-container" onSubmit={handleSubmit}>
+                <div className="login-form-group">
+                    <label className="login-label-control">Email</label>
+                    <input type='email' className="login-input-control" placeholder='example@gmail.com' value={values.email} name='email' onChange={handleChange}/>
+                    {errors.email && <p>{errors.email}</p>}
                 </div>
 
-                <div className="form-group">
-                    <label className="label-control">Password</label>
-                    <input type="password" className="input-control" />
+                <div className="login-form-group">
+                    <label className="login-label-control">Password</label>
+                    <input type="password" className="login-input-control" placeholder='Enter Password' value={values.password} name='password' onChange={handleChange}/>
+                    {errors.password && <p>{errors.password}</p>}
                 </div>
 
-                <div className="form-group">
-                    <input type="submit" className="btn btn-primary"/>
+                <div className="login-form-group">
+                <button type="submit" className="btn btn-primary" id='submit-button'>Login</button>
                 </div>
             </form>
-            <div className="sign-up-link-container">
+            
+            <div className="login-link-container">
                 <p>Dont have an account?</p>
                 <Link to="/signup">
                     <p>Sign Up</p>
                 </Link>
             </div>
         </div>
+        </>
     );
 }
 
