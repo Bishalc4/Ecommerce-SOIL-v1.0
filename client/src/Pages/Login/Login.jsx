@@ -25,12 +25,16 @@ function Login() {
 
      useEffect(() => {
         if (Object.keys(errors).length === 0 && (values.email !== "" && values.password !== "")) {
-            const users = JSON.parse(localStorage.getItem("Users"));
-            if (users && users.email === values.email && users.password === values.password) {
-                alert("Logged in successful");
+            const existingUsers = JSON.parse(localStorage.getItem("users")) || []; // reterive all existing users or assign to nothing if 'users' key is not there
+            const existingUser = existingUsers.find(user => user.email === values.email && user.password === values.password); //check if inputted login detail matches with existing user
+
+            if (existingUser) {
+                alert("Login successful");
+                localStorage.setItem("user", JSON.stringify(existingUser.name));
             } else {
                 alert("Account doesn't exit");
             }
+
         }
       }, [errors]);
 
