@@ -10,15 +10,22 @@ function App() {
   
   const location = useLocation();
   const isLoginPage = (location.pathname === '/login' || location.pathname === '/signup');
+  const isLoggedIn = localStorage.getItem("user") && localStorage.getItem("user").length > 2;
+  let username = "";
+  if (isLoggedIn) {
+    username = JSON.parse(localStorage.getItem("user"));
+  }
+  console.log("-", username);
 
   return (
     <>
       {!isLoginPage && (
         <>
-          <Header isLoggedIn={true} />
+          <Header isLoggedIn={isLoggedIn} username={username} />
           <Navbar />
         </>
       )}
+
 
       <AllRoutes />
 
