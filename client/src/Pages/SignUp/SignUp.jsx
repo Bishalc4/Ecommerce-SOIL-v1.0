@@ -30,7 +30,7 @@ function SignUp() {
 
            const existingUsers = JSON.parse(localStorage.getItem("users")) || []; // reterive all existing users or assign to nothing if 'users' key is not there
 
-           const existingUser = existingUsers.find(user => user.email === values.email && user.name === values.name);  //check if inputted login detail matches with existing user
+           const existingUser = existingUsers.find(user => user.email === values.email && (user.name).toLowerCase() === (values.name).toLowerCase());  //check if inputted login detail matches with existing user
             
             if (existingUser) {
                 alert("Account already exists");
