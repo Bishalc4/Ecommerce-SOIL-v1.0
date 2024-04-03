@@ -3,6 +3,9 @@ import ProfileAvatar from "../../assets/ProfileAvatar.png"
 import "./Profile.scss"
 
 function Profile() {
+
+    
+
     return(
         <div className="profile-page-container">
             <h1 className="profile-user">trehanpannya70&apos;s profile</h1>
