@@ -3,6 +3,7 @@ import {useState, useEffect} from 'react'
 import AuthHeader from "../../Components/Layout/Auth-Header/AuthHeader"
 import "./SignUp.scss"
 import validate from "../SignUpValidation"
+import DietNutrition from "../DietNutrition/DietNutrition"
 
 function SignUp() {
      const [values, setValues] = useState({
@@ -14,8 +15,8 @@ function SignUp() {
 
      const [errors, setError] = useState({});
 
-     function handleSubmit(event) {
-        if(event) event.preventDefault();
+     function handleSubmit(e) {
+        e.preventDefault();
         setError(validate(values));
 
      }
@@ -26,10 +27,24 @@ function SignUp() {
 
      useEffect(() => {
         if (Object.keys(errors).length === 0 && (values.name !== "" && values.email !== "" && values.password !== "" && values.confirmPassword !== "")) {
-           alert("“Thank you for joining our SOIL community");
-           const userData = { name: values.name, email: values.email, password: values.password };
 
-           localStorage.setItem("Users", JSON.stringify(userData));
+           const existingUsers = JSON.parse(localStorage.getItem("users")) || []; // reterive all existing users or assign to nothing if 'users' key is not there
+
+           const existingUser = existingUsers.find(user => user.email === values.email && user.name === values.name);  //check if inputted login detail matches with existing user
+            
+            if (existingUser) {
+                alert("Account already exists");
+            }
+
+            else {
+            alert("Thank you for joining our SOIL community");
+
+            const currDate = new Date(); 
+            const userData = { name: values.name, email: values.email, password: values.password, dateJoined: currDate};
+            const updatedUsers = [...existingUsers, userData];
+
+            localStorage.setItem("user", JSON.stringify(values.name));
+            localStorage.setItem("users", JSON.stringify(updatedUsers)); }
         }
       }, [errors]);
 
