@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom"
-import { Home, Specials, DietNutrition, GrowItYourself, About, Login, SignUp, Cart, NotFound} from "./index"
+import { Home, Specials, DietNutrition, GrowItYourself, About, Login, SignUp, Cart, Profile, NotFound} from "./index"
 
 function AllRoutes() {
     return(
@@ -12,6 +12,7 @@ function AllRoutes() {
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<SignUp />} />
             <Route path="/cart" element={<Cart />} />
+            <Route path="/profile" element={<Profile />} />
             <Route path="*" element={<NotFound />} />
         </Routes>
     );
