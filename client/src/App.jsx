@@ -2,7 +2,7 @@ import { useLocation } from "react-router-dom"
 import Header from './Components/Layout/Header/Header.jsx'
 import Navbar from './Components/Layout/Navbar/Navbar.jsx'
 import Footer from './Components/Layout/Footer/Footer.jsx'
-import ProductsList from "../src/Pages/ProductList.jsx"
+import ProductsList from "./Functions/ProductsList.js"
 import AllRoutes from "./Pages/AllRoutes.jsx"
 
 import './App.css'

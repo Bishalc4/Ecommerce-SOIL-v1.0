@@ -1,4 +1,4 @@
-function ProductList() {
+function ProductsList() {
     const products = [
         { productId: 1, productName: "Banana", price: 0.70, specialPrice: null, category: "Fruits", imageUrl: "./banana.png" },
         { productId: 2, productName: "Cucumber", price: 1.20, specialPrice: null, category: "Vegetables", imageUrl: "./cucumber.png" },
@@ -26,5 +26,5 @@ function ProductList() {
     localStorage.setItem("products", JSON.stringify(products))
     );
 }
-export default ProductList; 
+export default ProductsList; 
 
