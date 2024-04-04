@@ -30,7 +30,7 @@ function Login() {
 
             if (existingUser) {
                 alert("Login successful");
-                localStorage.setItem("userName", JSON.stringify(existingUser.username));
+                localStorage.setItem("user", JSON.stringify(existingUser.username));
             } else {
                 alert("Account doesn't exit");
             }

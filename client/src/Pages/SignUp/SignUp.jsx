@@ -50,7 +50,7 @@ function SignUp() {
                               `${year}-${month}-${day}`, firstName: "", lastName: "",}
             const updatedUsers = [...existingUsers, userData];
 
-            localStorage.setItem("userName", JSON.stringify(values.username)); //store the username of the logged in users
+            localStorage.setItem("user", JSON.stringify(values.username)); //store the username of the logged in users
             localStorage.setItem("users", JSON.stringify(updatedUsers)); } // put new user into list of existing users
             
             const userInitialProfile = {username: values.username, age: null, weight: null, height: null, activityLevel: "", 

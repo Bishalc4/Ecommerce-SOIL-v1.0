@@ -8,7 +8,7 @@ function Profile() {
     const usersArray = JSON.parse(users);
     let foundUser = null;
     for (const user of usersArray) {
-        if (user.name === currUser) {
+        if (user.username === currUser) {
             foundUser = user;
             break;
         }
@@ -29,11 +29,11 @@ function Profile() {
 
     return(
         <div className="profile-page-container">
-            <h1 className="profile-user">{foundUser.name}&apos;s profile</h1>
+            <h1 className="profile-user">{foundUser.username}&apos;s profile</h1>
             <div className="profile-information-container">
                 <img src={ProfileAvatar} alt="Profile Avatar" className="profile-avatar"></img>
                 <div className="profile-details-container">
-                    <p className="profile-username"><b>{foundUser.name}</b></p>
+                    <p className="profile-username"><b>{foundUser.username}</b></p>
                     <p className="username-join-date">Member since {joinDate}</p>
                     <div className="profile-page-btns">
                         <Link to="/editprofile">
