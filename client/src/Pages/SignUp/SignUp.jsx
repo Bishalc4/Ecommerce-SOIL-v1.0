@@ -39,12 +39,10 @@ function SignUp() {
             }
 
             else {
-
             const currDate = new Date();
             const year = currDate.getFullYear();
             const month = currDate.getMonth() + 1; 
             const day = currDate.getDate();
-
 
             const userData = { username: values.username, email: values.email, password: values.password, dateJoined: 
                               `${year}-${month}-${day}`, firstName: "", lastName: "",}
@@ -52,11 +50,15 @@ function SignUp() {
 
             localStorage.setItem("user", JSON.stringify(values.username)); //store the username of the logged in users
             localStorage.setItem("users", JSON.stringify(updatedUsers)); } // put new user into list of existing users
-            
+
+
+            const personalisedProfiles = JSON.parse(localStorage.getItem("profiles")) || []; // reterive all existing users personalised profiles
             const userInitialProfile = {username: values.username, age: null, weight: null, height: null, activityLevel: "", 
                                         dietaryPreferences: "", healthGoals: "", caloricRequirement: ""};
 
-            localStorage.setItem("profile",  JSON.stringify(userInitialProfile)); //storing empty personalised profiles for letter use  
+            const updatedProfiles = [...personalisedProfiles, userInitialProfile];
+
+            localStorage.setItem("profiles",  JSON.stringify(updatedProfiles)); //storing empty personalised profiles for later use  
 
             alert("Thank you for joining our SOIL community");
             navigate("/profile");
