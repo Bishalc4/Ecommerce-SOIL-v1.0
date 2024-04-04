@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom"
+import { Link,  useNavigate} from "react-router-dom"
 import { useState, useEffect} from'react'
 import AuthHeader from "../../Components/Layout/Auth-Header/AuthHeader"
 import validate from "../FormValidation/LoginValidation"
@@ -6,6 +6,8 @@ import "./Login.scss"
 
 //Users will use this page to login
 function Login() {
+    const navigate = useNavigate();
+
     const [values, setValues] = useState({
         email: '',
         password: ''
@@ -29,8 +31,9 @@ function Login() {
             const existingUser = existingUsers.find(user => user.email === values.email && user.password === values.password); //check if inputted login detail matches with existing user
 
             if (existingUser) {
-                alert("Login successful");
                 localStorage.setItem("user", JSON.stringify(existingUser.username));
+                alert("Login successful");
+                navigate("/profile");
             } else {
                 alert("Account doesn't exit");
             }
