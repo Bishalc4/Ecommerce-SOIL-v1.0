@@ -2,12 +2,11 @@ import { Link } from "react-router-dom"
 import {useState, useEffect} from 'react'
 import AuthHeader from "../../Components/Layout/Auth-Header/AuthHeader"
 import "./SignUp.scss"
-import validate from "../SignUpValidation"
-import DietNutrition from "../DietNutrition/DietNutrition"
+import validate from "../FormValidation/SignUpValidation"
 
 function SignUp() {
      const [values, setValues] = useState({
-        name: '',
+        username: '',
         email: '',
         password: '',
         confirmPassword: ''
@@ -26,11 +25,12 @@ function SignUp() {
      }
 
      useEffect(() => {
-        if (Object.keys(errors).length === 0 && (values.name !== "" && values.email !== "" && values.password !== "" && values.confirmPassword !== "")) {
+        if (Object.keys(errors).length === 0 && (
+            values.name !== "" && values.email !== "" && values.password !== "" && values.confirmPassword !== "" && values.username !== "")) {
 
            const existingUsers = JSON.parse(localStorage.getItem("users")) || []; // reterive all existing users or assign to nothing if 'users' key is not there
 
-           const existingUser = existingUsers.find(user => user.email === values.email && (user.name).toLowerCase() === (values.name).toLowerCase());  //check if inputted login detail matches with existing user
+           const existingUser = existingUsers.find(user => user.email === values.email && (user.Username).toLowerCase() === (values.username).toLowerCase());  //check if inputted login detail matches with existing user
             
             if (existingUser) {
                 alert("Account already exists");
@@ -38,6 +38,7 @@ function SignUp() {
 
             else {
             alert("Thank you for joining our SOIL community");
+            <Link to ="/profile" />
 
             const currDate = new Date();
             const year = currDate.getFullYear();
@@ -45,10 +46,10 @@ function SignUp() {
             const day = currDate.getDate();
 
 
-            const userData = { name: values.name, email: values.email, password: values.password, dateJoined: `${year}-${month}-${day}`}
+            const userData = { username: values.username, email: values.email, password: values.password, dateJoined: `${year}-${month}-${day}`, firstName: "", lastName: "",}
             const updatedUsers = [...existingUsers, userData];
 
-            localStorage.setItem("user", JSON.stringify(values.name));
+            localStorage.setItem("userName", JSON.stringify(values.username));
             localStorage.setItem("users", JSON.stringify(updatedUsers)); }
         }
       }, [errors]);
@@ -61,10 +62,11 @@ function SignUp() {
         <div className="signup-container">
             <form className="form-container" onSubmit={handleSubmit}>
 
+
                 <div className="signup-form-group">
-                    <label className="signup-label-control">Name</label>
-                    <input type='text' placeholder='Enter Name' className="signup-input-control" value={values.name} name='name' onChange={handleChange}/>
-                    {errors.name && <p>{errors.name}</p>}
+                    <label className="signup-label-control">Username</label>
+                    <input type='text' placeholder='Enter Name' className="signup-input-control" value={values.username} name='username' onChange={handleChange}/>
+                    {errors.username && <p>{errors.username}</p>}
                 </div>
 
                 <div className="signup-form-group">
@@ -77,6 +79,11 @@ function SignUp() {
                     <label className="signup-label-control">Password</label>
                     <input type="password" placeholder='Enter Password' className="signup-input-control" value={values.password} name='password' onChange={handleChange}/>
                     {errors.password && <p>{errors.password}</p>}
+                    {errors.passwordLength && <p>{errors.passwordLength}</p>}
+                    {errors.passwordNumber && <p>{errors.passwordNumber}</p>}
+                    {errors.passwordSpecialChar && <p>{errors.passwordSpecialChar}</p>}
+                    {errors.passwordUppercase && <p>{errors.passwordUppercase}</p>}
+                    {errors.passwordLowercase && <p>{errors.passwordLowercase}</p>}
                 </div>
 
                 <div className="signup-form-group">
