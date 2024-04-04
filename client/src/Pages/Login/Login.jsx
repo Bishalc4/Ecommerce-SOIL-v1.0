@@ -57,12 +57,12 @@ function Login() {
                 </div>
 
                 <div className="login-form-group">
-                <button type="submit" className="btn btn-primary" id='submit-button'>Login</button>
+                    <button type="submit" className="btn btn-primary" id='submit-button'>Login</button>
                 </div>
             </form>
             
             <div className="login-link-container">
-                <p>Dont have an account?</p>
+                <p>Dont have an account? </p>
                 <Link to="/signup">
                     <p>Sign Up</p>
                 </Link>
