@@ -5,19 +5,38 @@ import "./EditProfile.scss"
 function EditProfile() {
     const currUser = JSON.parse((localStorage.getItem("user")));
     const users = localStorage.getItem("users");
-    const usersArray = JSON.parse(users);
+    var usersArray = JSON.parse(users);
     let foundUser = null; //found user is the array containing all user information
+    let userIndex = 0;
     for (const user of usersArray) {
-        if (user.name === currUser) {
+        if (user.username === currUser) {
             foundUser = user;
             break;
         }
+        userIndex++;
     }
     
-    const [userDetails, setUserDetails] = useState({firstName: foundUser.firstName,
-                                                    lastName: foundUser.lastName,
-                                                    username: foundUser.name,
-                                                    email: foundUser.email});
+    const [userDetails, setUserDetails] = useState({username: foundUser.username,
+                                                    email: foundUser.email,
+                                                    firstName: foundUser.firstName,
+                                                    lastName: foundUser.lastName
+                                                    });
+    
+    function handleFirstNameChange(e) {
+        setUserDetails({...userDetails, firstName: e.target.value.replace(/\s/g, '')});
+    }
+
+    function handleLastNameChange(e) {
+        setUserDetails({...userDetails, lastName: e.target.value.replace(/\s/g, '')});
+    }
+
+    function handleSaveChanges(e) {
+        e.preventDefault();
+        usersArray[userIndex].email = userDetails.email;
+        usersArray[userIndex].firstName = userDetails.firstName;
+        usersArray[userIndex].lastName = userDetails.lastName;
+        localStorage.setItem("users", JSON.stringify(usersArray));
+    }
 
     return(
         <div className="edit-profile-container">
@@ -25,29 +44,31 @@ function EditProfile() {
                 <h1>Edit profile</h1>
                 <form className="account-details-form">
                     <h2>Account Details:</h2>
+                    <div className="username-group">
+                        <label>Username:</label>
+                        <input value={userDetails.username} readOnly></input>
+                    </div>
                     <div className="name-container">
                         <div className="first-name-group">
                             <label>First name:</label>
-                            <input></input>
+                            <input value={userDetails.firstName} onChange={handleFirstNameChange}></input>
+                            {/* prevent user from having spaces */}
                         </div>
                         <div className="last-name-group">
                             <label>Last name:</label>
-                            <input></input>
+                            <input value={userDetails.lastName} onChange={handleLastNameChange}></input>
+                            {/* prevent user from having spaces */}
                         </div>
-                    </div>
-                    <div className="username-group">
-                        <label>Username:</label>
-                        <input></input>
                     </div>
                     <div className="email-group">
                         <label>Email:</label>
-                        <input></input>
+                        <input type="email" value={userDetails.email} readOnly></input>
                     </div>
                     <Link to="/passwordchange">
                         <button>Change password</button>
                     </Link>
                     <div className="form-submit-container">
-                        <button>Save Changes</button>
+                        <button onClick={handleSaveChanges}>Save Changes</button>
                     </div>
                 </form>
             </div>
