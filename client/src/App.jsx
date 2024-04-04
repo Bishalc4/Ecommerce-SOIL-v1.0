@@ -15,13 +15,12 @@ function App() {
   if (isLoggedIn) {
     username = JSON.parse(localStorage.getItem("user"));
   }
-  console.log("-", username);
 
   return (
     <>
       {!isLoginPage && (
         <>
-          <Header isLoggedIn={isLoggedIn} username={username} />
+          <Header isLoggedIn={isLoggedIn} username={username}/>
           <Navbar />
         </>
       )}
