@@ -7,4 +7,5 @@ export { default as Login } from "./Login/Login";
 export { default as SignUp } from "./SignUp/SignUp";
 export { default as Cart } from "./Cart/Cart";
 export { default as Profile } from "./Profile/Profile";
+export { default as EditProfile } from "./EditProfile/EditProfile";
 export { default as NotFound } from "./NotFound/NotFound";

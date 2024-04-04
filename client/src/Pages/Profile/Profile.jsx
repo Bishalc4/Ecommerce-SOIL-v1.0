@@ -36,7 +36,7 @@ function Profile() {
                     <p className="profile-username"><b>{foundUser.name}</b></p>
                     <p className="username-join-date">Member since {joinDate}</p>
                     <div className="profile-page-btns">
-                        <Link to="/">
+                        <Link to="/editprofile">
                             <button className="edit-profile-btn">Edit Profile</button>
                         </Link>
                         <Link to="/">
