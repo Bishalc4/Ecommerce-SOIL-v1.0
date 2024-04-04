@@ -1,10 +1,12 @@
-import { Link } from "react-router-dom"
+import { Link, useNavigate} from "react-router-dom"
 import {useState, useEffect} from 'react'
 import AuthHeader from "../../Components/Layout/Auth-Header/AuthHeader"
 import "./SignUp.scss"
 import validate from "../FormValidation/SignUpValidation"
 
 function SignUp() {
+    const navigate = useNavigate();
+
      const [values, setValues] = useState({
         username: '',
         email: '',
@@ -37,8 +39,6 @@ function SignUp() {
             }
 
             else {
-            alert("Thank you for joining our SOIL community");
-            <Link to ="/profile" />
 
             const currDate = new Date();
             const year = currDate.getFullYear();
@@ -46,11 +46,20 @@ function SignUp() {
             const day = currDate.getDate();
 
 
-            const userData = { username: values.username, email: values.email, password: values.password, dateJoined: `${year}-${month}-${day}`, firstName: "", lastName: "",}
+            const userData = { username: values.username, email: values.email, password: values.password, dateJoined: 
+                              `${year}-${month}-${day}`, firstName: "", lastName: "",}
             const updatedUsers = [...existingUsers, userData];
 
-            localStorage.setItem("userName", JSON.stringify(values.username));
-            localStorage.setItem("users", JSON.stringify(updatedUsers)); }
+            localStorage.setItem("userName", JSON.stringify(values.username)); //store the username of the logged in users
+            localStorage.setItem("users", JSON.stringify(updatedUsers)); } // put new user into list of existing users
+            
+            const userInitialProfile = {username: values.username, age: null, weight: null, height: null, activityLevel: "", 
+                                        dietaryPreferences: "", healthGoals: "", caloricRequirement: ""};
+
+            localStorage.setItem("profile",  JSON.stringify(userInitialProfile)); //storing empty personalised profiles for letter use  
+
+            alert("Thank you for joining our SOIL community");
+            navigate("/profile");
         }
       }, [errors]);
 
