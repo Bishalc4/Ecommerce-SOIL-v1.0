@@ -20,6 +20,30 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            flex-direction: column;
+            text-align: center;
+            padding: 2%;
+
+            h1{
+                font-size: 500%;
+                font-weight: 400;
+                margin: 0;
+            }
+
+            p{
+               font-size: 25px; 
+            }
+
+            .read-more-btn{
+                border: none;
+                background-color: $font-color;
+                color: white;
+                height: 70px;
+                width: 130px;
+                border-radius: 50px;
+                font-size: 18px;
+                cursor: pointer;
+            }
 
             .temp{
                 display: flex;
@@ -30,27 +54,13 @@
                 padding-right: 10%;
                 text-align: center;
 
-                h1{
-                    font-size: 92px;
-                    font-weight: 400;
-                    margin: 0;
-                }
-
-                p{
-                   font-size: 27px; 
-                }
-
-                .read-more-btn{
-                    border: none;
-                    background-color: $font-color;
-                    color: white;
-                    height: 70px;
-                    width: 130px;
-                    border-radius: 50px;
-                    font-size: 18px;
-                    cursor: pointer;
-                }
+                
             }
+        }
+    }
+    @media screen and (max-width: 768px) {
+        .row .overlay {
+            width: 90%; // Adjusted width for smaller screens
         }
     }
     .infographic-container{

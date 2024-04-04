@@ -6,25 +6,25 @@ import "./Home.scss"
 function Home() {
     return(
         <div className="home-container">
-            <div className="row" id="landing-section">
+            <div className="row">
                 <div className="overlay">
-                    <div className="temp">
-                        <h1>SOIL</h1>
-                        <p>
-                            At SOIL, we’re passionate about offering
-                            premium, organic, and fresh food. At SOIL,
-                            we’re passionate about offering premium,
-                            organic, and fresh food.
-                        </p>
-                        <button className="read-more-btn">Read More</button>
-                    </div>
+                    <h1>SOIL</h1>
+                    <p>
+                        At SOIL, we’re passionate about offering
+                        premium, organic, and fresh food. At SOIL,
+                        we’re passionate about offering premium,
+                        organic, and fresh food.
+                    </p>
+                    <button className="read-more-btn">Read More</button>
                 </div>
             </div>
+
             <div className="infographic-container">
                 <div className="infographic">
                     <img src={Infographic} alt="Organic Foods Infographic"></img>
                 </div>
             </div>
+
             <div className="diet-nutrition-container">
                 <div className="diet-nutrition-image-container">
                     <img src={DietNutritionImage} alt="Diet Nutrition Image" className="diet-nutrition-img"></img>
@@ -41,6 +41,7 @@ function Home() {
                     <button>Read More</button>
                 </div>
             </div>
+
             <div className="community-row">
                 <div className="community-container">
                     <div className="community-info-container">
