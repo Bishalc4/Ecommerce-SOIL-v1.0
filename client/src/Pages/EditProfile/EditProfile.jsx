@@ -40,9 +40,9 @@ function EditProfile() {
     const [profileDetails, setProfileDetails] = useState({age: currUserProfile.age,
                                                           weight: currUserProfile.weight,
                                                           height: currUserProfile.height,
-                                                          activityLevel: currUserProfile.activityLevel,
-                                                          dietaryPreferences: currUserProfile.dietaryPreferences,
-                                                          healthGoals: currUserProfile.healthGoals
+                                                          activityLevel: "sedentary",
+                                                          dietaryPreferences: "none",
+                                                          healthGoals: "maintain"
                                                         });
     
     function handleFirstNameChange(e) {
@@ -160,6 +160,7 @@ function EditProfile() {
                     <div className="dietary-preferences-group">
                         <label htmlFor="dietary-preferences">Dietary preferences:</label>
                         <select id="dietary-preferences" name="dietary-preference" onChange={handleDietaryPreferenceChange}>
+                            <option value="none">None</option>
                             <option value="vegan">Vegan</option>
                             <option value="vegetarian">Vegetarian -</option>
                             <option value="pescatarian">Pescatarian</option>
