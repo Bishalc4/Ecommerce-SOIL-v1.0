@@ -8,6 +8,7 @@ import Search from "../../../Pages/Search/Search.jsx"
 
 function Header(props) {
     const isLoggedIn = props.isLoggedIn;
+    const username = props.username;
 
     return(
         <>
@@ -21,11 +22,11 @@ function Header(props) {
                 <div className="site-buttons">
                     {isLoggedIn ? (
                         <Link to="/profile">
-                            <ProfileButton loggedIn={isLoggedIn}/>
+                            <ProfileButton loggedIn={isLoggedIn} username={username}/>
                         </Link>
                     ): (
                         <Link to="/login">
-                            <ProfileButton loggedIn={isLoggedIn}/>
+                            <ProfileButton loggedIn={isLoggedIn} username={username}/>
                         </Link>
                     )}
                     <Link to="/cart">
@@ -38,6 +39,7 @@ function Header(props) {
 }
 Header.propTypes = {
     isLoggedIn: PropTypes.bool,
+    username: PropTypes.string,
 }
 
 export default Header;
