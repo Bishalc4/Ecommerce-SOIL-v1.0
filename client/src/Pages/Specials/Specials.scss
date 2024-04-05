@@ -3,4 +3,7 @@
 .specials-container{
     width: $common-width;
     padding: $common-padding;
+    .products-grid-container{
+        text-align: center;
+    }
 }

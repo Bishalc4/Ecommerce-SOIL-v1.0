@@ -1,0 +1,34 @@
+.product-card-container{
+    border: 1px solid rgb(145, 142, 142);
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px rgb(102, 100, 100);
+    padding: 20px;
+    text-align: left;
+    max-width: 250px;
+    display: inline-block;
+    margin: 10px;
+
+    h1{
+        margin: 0;
+        margin-top: 5%;
+    }
+
+    p{
+        font-size: 115%;
+    }
+
+    img{
+        width: 100%;
+        height: auto;
+    }
+    button{
+        margin-top: 20%;
+        width: 100%;
+        padding-top: 5%;
+        padding-bottom: 5%;
+        border: none;
+        font-size: 100%;
+        background-color: #477D58;
+        color: white;
+    }
+}
