@@ -1,3 +1,5 @@
+@import "../../../common.scss";
+
 .product-card-container{
     border: 1px solid rgb(145, 142, 142);
     border-radius: 10px;
@@ -7,6 +9,13 @@
     max-width: 250px;
     display: inline-block;
     margin: 10px;
+    color: $font-color;
+
+    .product-original-price{
+        color: rgb(165, 159, 159);
+        text-decoration: line-through;
+        margin: 0;
+    }
 
     h1{
         margin: 0;
