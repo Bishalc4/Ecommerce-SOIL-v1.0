@@ -34,6 +34,8 @@ function Profile() {
                 <img src={ProfileAvatar} alt="Profile Avatar" className="profile-avatar"></img>
                 <div className="profile-details-container">
                     <p className="profile-username"><b>{foundUser.username}</b></p>
+                    <p className="names">{foundUser.firstName} {foundUser.lastName}</p>
+                    <p className="email">{foundUser.email}</p>
                     <p className="username-join-date">Member since {joinDate}</p>
                     <div className="profile-page-btns">
                         <Link to="/editprofile">
