@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import ProductCard from "../../Components/Layout/ProductCard/ProductCard";
-// import banana from "../../assets/ProductsImage/banana.jpg";
+import images from "../../assets";
 import "./Specials.scss";
+// import apple from "../../assets/ProductsImage/apple.jpg";
 
 //Special deals page - displays products on sale
 function Specials(){
@@ -21,7 +22,7 @@ function Specials(){
                 {product
                     .filter(item => item.specialPrice !== null)
                     .map((item, index) => (
-                    <ProductCard key={index} product={item} />
+                    <ProductCard key={index} product={item} image={images[item.imageUrl]} />
                 ))}
             </div>
         </div>
