@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types'
 import "./ProductCard.scss"
+import { Link } from "react-router-dom"
 
 function ProductCard(props) {
     const productImage = props.productImage;
@@ -8,7 +9,9 @@ function ProductCard(props) {
 
     return(
         <div className="product-card-container">
-            <img src={productImage} alt="Product Image"/>
+            <Link to="/product" state={{ productId: props.productId}}>
+                <img src={productImage} alt="Product Image"/>
+            </Link>
             <h1>${productPrice}</h1>
             <p>{productName}</p>
             <button>Add to cart</button>
@@ -19,6 +22,7 @@ ProductCard.propTypes = {
     productImage: PropTypes.string.isRequired,
     productPrice: PropTypes.number.isRequired,
     productName: PropTypes.string.isRequired,
+    productId: PropTypes.number.isRequired,
 }
 
 export default ProductCard
