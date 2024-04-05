@@ -4,16 +4,16 @@ import { Link } from "react-router-dom"
 
 function ProductCard(props) {
     const productId = props.product.productId;
-    const productImage = props.product.imageUrl; //this will be passed through the Specials page
     const productPrice = parseFloat(props.product.price).toFixed(2);
     const productSpecialPrice = parseFloat(props.product.specialPrice).toFixed(2);
     const productName = props.product.productName;
+    const image = props.image;
     
 
     return(
         <div className="product-card-container">
             <Link to="/product" state={{ productId: {productId}}}>
-                <img src={productImage} alt="Product Image"/>
+                <img src={image} alt="Product Image"/>
             </Link>
             {productSpecialPrice !== null ? (
                 <>
@@ -31,6 +31,7 @@ function ProductCard(props) {
 }
 ProductCard.propTypes = {
     product: PropTypes.object,
+    image: PropTypes.string,
 }
 
 export default ProductCard
