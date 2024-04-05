@@ -1,13 +1,13 @@
-import "./Specials.scss"
+import "./Specials.scss";
 import ProductCard from "../../Components/Layout/ProductCard/ProductCard";
-import banana from "../../assets/ProductsImage/banana.jpg"
+import banana from "../../assets/ProductsImage/banana.jpg";
 
 //Special deals page - displays products on sale
 function Specials(){
     return(
         <div className="specials-container">
             <div className="products-grid-container">
-                <ProductCard productName="Banana" productPrice={0.7} productImage={banana}/>
+                <ProductCard productId={1} productName="Banana" productPrice={0.7} productImage={banana}/>
                 <ProductCard productName="Banana" productPrice={0.7} productImage={banana}/>
                 <ProductCard productName="Banana" productPrice={0.7} productImage={banana}/>
                 <ProductCard productName="Banana" productPrice={0.7} productImage={banana}/>
