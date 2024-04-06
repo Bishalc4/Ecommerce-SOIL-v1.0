@@ -59,7 +59,13 @@
                 }
 
                 button{
-                    margin-top: 20%;
+                    &.special{
+                        margin-top: 20%;
+                    }
+                    &.original{
+                        margin-top: 10%;
+                    }
+                    
                     width: 30%;
                     padding-top: 2.5%;
                     padding-bottom: 2.5%;
