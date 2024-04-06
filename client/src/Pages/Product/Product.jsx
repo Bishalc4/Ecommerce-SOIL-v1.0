@@ -7,7 +7,10 @@ function Product() {
     const productImage = location.state.productImage;
     const productName = location.state.product.productName;
     const productPrice = parseFloat(location.state.product.price).toFixed(2);
-    const productSpecialPrice = parseFloat(location.state.product.specialPrice).toFixed(2);
+    var productSpecialPrice = location.state.product.specialPrice;
+    if (productSpecialPrice !== null) {
+        productSpecialPrice = parseFloat(productSpecialPrice).toFixed(2);
+    }
     const productSavedPrice = parseFloat(productPrice - productSpecialPrice).toFixed(2);
 
     return(
@@ -25,9 +28,18 @@ function Product() {
                     )}
                     <div className={`product-information-container ${productSpecialPrice !== null ? 'special' : 'original'}`}>
                         <h1>{productName}</h1>
-                        <h1>${productSpecialPrice}</h1>
-                        <h2 className="product-special-price">Was ${productPrice}</h2>
-                        <button>Add to cart</button> {/* add to cart component goes here */}
+                        {productSpecialPrice !== null ? (
+                            <>
+                                <h1>${productSpecialPrice}</h1>
+                                <h2 className="product-special-price">Was ${productPrice}</h2>
+                            </>
+                        ): (
+                            <>
+                                <h1>${productPrice}</h1>
+                            </>
+                        )}
+                        
+                        <button className={`add-to-cart-btn ${productSpecialPrice !== null ? 'special' : 'original'}`} >Add to cart</button> {/* add to cart component goes here */}
                     </div>
                 </div>
             </div>
