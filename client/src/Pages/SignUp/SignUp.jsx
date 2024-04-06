@@ -53,8 +53,8 @@ function SignUp() {
 
 
             const personalisedProfiles = JSON.parse(localStorage.getItem("profiles")) || []; // reterive all existing users personalised profiles
-            const userInitialProfile = {username: values.username, age: null, weight: null, height: null, activityLevel: "", 
-                                        dietaryPreferences: "", healthGoals: "", caloricRequirement: ""};
+            const userInitialProfile = {username: values.username, age: null, sex: "", weight: null, height: null, activityLevel: "sedentary", 
+                                        dietaryPreferences: "none", healthGoals: "maintain", caloricRequirement: ""};
 
             const updatedProfiles = [...personalisedProfiles, userInitialProfile];
 
