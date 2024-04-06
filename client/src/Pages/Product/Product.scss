@@ -1,0 +1,85 @@
+@import "../../common.scss";
+
+.product-container{
+    width: $common-width;
+    padding: $common-padding;
+    color: $font-color;
+    padding-top: 6vh;
+    padding-bottom: 4vh;
+
+    .row{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-evenly;
+
+        .product-image{
+            width: 35%;
+            border-radius: 3%;
+            max-height: 50vh;
+        }
+
+        .product-details-container{
+            width: 35%;
+
+            .special-save-container{
+                width: 100%;
+                text-align: center;
+                background-color: #FFDD00;
+                border: 3px solid #FFDD00;
+                box-sizing: border-box;
+                padding-top: 1%;
+                padding-bottom: 1%;
+
+                h1{
+                    font-size: 150%;
+                    color: black;
+                    margin: 0;
+                }
+            }
+
+            .product-information-container{
+                &.special{
+                    border: 3px solid #FFDD00;
+                }
+
+                &.original{
+                    border: 3px solid $font-color;
+                }
+                box-sizing: border-box;
+                width: 100%;
+                height: auto;
+                text-align: left;
+                padding: 5%;
+                padding-top: 2%;
+
+                .product-special-price{
+                    color: rgb(120, 117, 117);
+                    margin: 0;
+                }
+
+                button{
+                    margin-top: 20%;
+                    width: 30%;
+                    padding-top: 2.5%;
+                    padding-bottom: 2.5%;
+                    border: none;
+                    font-size: 110%;
+                    background-color: #477D58;
+                    color: white;
+                    cursor: pointer;
+                    border-radius: 10px;
+                }
+            }
+        }
+    }
+    .product-about{
+        text-align: left;
+        padding-left: 3vw;
+        width: 90%;
+
+        p{
+            font-size: 150%;
+        }
+    }
+}
