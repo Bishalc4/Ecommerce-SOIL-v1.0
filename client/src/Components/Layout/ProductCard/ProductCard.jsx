@@ -4,6 +4,7 @@ import { Link } from "react-router-dom"
 
 function ProductCard(props) {
     const productId = props.product.productId;
+    console.log(productId);
     const productPrice = parseFloat(props.product.price).toFixed(2);
     const productSpecialPrice = parseFloat(props.product.specialPrice).toFixed(2);
     const productName = props.product.productName;
@@ -12,7 +13,7 @@ function ProductCard(props) {
 
     return(
         <div className="product-card-container">
-            <Link to="/product" state={{ productId: {productId}}}>
+            <Link to="/product" state={{ product: props.product, productImage: image}}>
                 <img src={image} alt="Product Image"/>
             </Link>
             {productSpecialPrice !== null ? (
