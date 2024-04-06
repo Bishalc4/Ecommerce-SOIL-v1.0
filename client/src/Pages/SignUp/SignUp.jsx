@@ -42,7 +42,7 @@ function SignUp() {
             const currDate = new Date();
             const year = currDate.getFullYear();
             const month = currDate.getMonth() + 1; 
-            const day = currDate.getDate();
+            const day = currDate.getDate() + 1;
 
             const userData = { username: values.username, email: values.email, password: values.password, dateJoined: 
                               `${year}-${month}-${day}`, firstName: "", lastName: "",}
