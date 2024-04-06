@@ -3,10 +3,11 @@ import "./ProductCard.scss"
 import { Link } from "react-router-dom"
 
 function ProductCard(props) {
-    const productId = props.product.productId;
-    console.log(productId);
     const productPrice = parseFloat(props.product.price).toFixed(2);
-    const productSpecialPrice = parseFloat(props.product.specialPrice).toFixed(2);
+    var productSpecialPrice = props.product.specialPrice;
+    if (productSpecialPrice !== null) {
+        productSpecialPrice = parseFloat(productSpecialPrice).toFixed(2);
+    }
     const productName = props.product.productName;
     const image = props.image;
     
