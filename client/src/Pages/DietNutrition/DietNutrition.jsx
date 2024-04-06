@@ -18,15 +18,19 @@ function DietNutrition(){
     }
 
     const [profileDetails, setProfileDetails] = useState({age: currUserProfile.age,
-        weight: currUserProfile.weight,
-        height: currUserProfile.height,
-        activityLevel: "sedentary",
-        dietaryPreferences: "none",
-        healthGoals: "maintain"
+                                                        sex: currUserProfile.sex,
+                                                        weight: currUserProfile.weight,
+                                                        height: currUserProfile.height,
+                                                        activityLevel: currUserProfile.activityLevel,
+                                                        healthGoals: currUserProfile.healthGoals
       });
 
     function handleAgeChange(e) {
         setProfileDetails({...profileDetails, age: e.target.value});
+    }
+
+    function handleSexChange(e) {
+        setProfileDetails({...profileDetails, sex: e.target.value});
     }
 
     function handleHeightChange(e) {
@@ -41,10 +45,6 @@ function DietNutrition(){
         setProfileDetails({...profileDetails, activityLevel: e.target.value});
     }
 
-    function handleDietaryPreferenceChange(e) {
-        setProfileDetails({...profileDetails, dietaryPreferences: e.target.value});
-    }
-
     function handleHealthGoalChange(e) {
         setProfileDetails({...profileDetails, healthGoals: e.target.value});
     }
@@ -52,10 +52,10 @@ function DietNutrition(){
     function handleProfileSaveChanges(e) {
         e.preventDefault();
         profilesArray[userProfileIndex].age = profileDetails.age;
+        profilesArray[userProfileIndex].sex = profileDetails.sex;
         profilesArray[userProfileIndex].height = profileDetails.height;
         profilesArray[userProfileIndex].weight = profileDetails.weight;
         profilesArray[userProfileIndex].activityLevel = profileDetails.activityLevel;
-        profilesArray[userProfileIndex].dietaryPreferences = profileDetails.dietaryPreferences;
         profilesArray[userProfileIndex].healthGoals = profileDetails.healthGoals;
         localStorage.setItem("profiles", JSON.stringify(profilesArray));
     }
@@ -70,76 +70,67 @@ function DietNutrition(){
             </div> */}
             <div className="macros-calculator">
                 <form className="goals-form">
-                    <div className="age-group" id="input-form">
+                    <div className="age-group">
                         <label>Age:</label>
-                        <input type="number" min="1" step="1" onChange={handleAgeChange}></input>
+                        <input type="number" min="1" step="1" onChange={handleAgeChange} value={profileDetails.age}></input>
                     </div>
-                    <div className="height-group" id="input-form">
+                    <div>
+                        <input type="radio" id="male" name="sex" onChange={handleSexChange} checked={profileDetails.sex === "male"} value="male"/>
+                        <label htmlFor="male">Male</label>
+
+                        <input type="radio" id="female" name="sex" onChange={handleSexChange} checked={profileDetails.sex === "female"} value="female"/>
+                        <label htmlFor="female">Female</label>
+                    </div>
+                    <div className="height-group">
                         <label>Height:</label>
-                        <input type="number" min="0.01" step="any" onChange={handleHeightChange}></input>
+                        <input type="number" min="0.01" step="any" onChange={handleHeightChange} value={profileDetails.height}></input>
                     </div>
                     <div className="weight-group" id="input-form">
                         <label>Weight:</label>
-                        <input type="number" min="0.01" step="any" onChange={handleWeightChange}></input>
+                        <input type="number" min="0.01" step="any" onChange={handleWeightChange} value={profileDetails.weight}></input>
                     </div>
                     <div className="activity-level-group">
-                        
+                        <p>Activity level:</p>
+                        <input type="radio" id="sedentary" name="activity-level" value="sedentary" checked={profileDetails.activityLevel === "sedentary"} onChange={handleActivityLevelChange} />
+                        <label htmlFor="sedentary">Sedentary: little to no exercise</label><br />
 
-                        <input type="radio" name="activity-level" value="sedentary" onChange={handleActivityLevelChange} />
-                        <label htmlFor="sedentary"><b>Sedentary:</b> little to no exercise</label><br />
+                        <input type="radio" id="light" name="activity-level" value="light" checked={profileDetails.activityLevel === "light"} onChange={handleActivityLevelChange} />
+                        <label htmlFor="light">Light: exercise 1-3 times/week</label><br />
 
-                        <input type="radio" name="activity-level" value="light" onChange={handleActivityLevelChange} />
-                        <label htmlFor="light"><b>Light:</b> exercise 1-3 times/week</label><br />
+                        <input type="radio" id="moderate" name="activity-level" value="moderate" checked={profileDetails.activityLevel === "moderate"} onChange={handleActivityLevelChange} />
+                        <label htmlFor="moderate">Moderate: exercise 4-5 times/week</label><br />
 
-                        <input type="radio" name="activity-level" value="moderate" onChange={handleActivityLevelChange} />
-                        <label htmlFor="moderate"><b>Moderate:</b> exercise 4-5 times/week</label><br />
+                        <input type="radio" id="active" name="activity-level" value="active" checked={profileDetails.activityLevel === "active"} onChange={handleActivityLevelChange} />
+                        <label htmlFor="active">Active: daily exercise or intense exercise 3-4 times/week</label><br />
 
-                        <input type="radio" name="activity-level" value="active" onChange={handleActivityLevelChange} />
-                        <label htmlFor="active"><b>Active:</b> daily exercise or intense exercise 3-4 times/week</label><br />
+                        <input type="radio" id="very-active" name="activity-level" value="very-active" checked={profileDetails.activityLevel === "very-active"} onChange={handleActivityLevelChange} />
+                        <label htmlFor="very-active">Very active: intense exercise 6-7 times/week</label><br />
 
-                        <input type="radio" name="activity-level" value="very-active" onChange={handleActivityLevelChange} />
-                        <label htmlFor="very-active"><b>Very active:</b> intense exercise 6-7 times/week</label><br />
-
-                        <input type="radio" name="activity-level" value="extra-active" onChange={handleActivityLevelChange} />
-                        <label htmlFor="extra-active"><b>Extra active:</b> very intense exercise daily, or physical job</label><br />
-                    </div>
-                    <div className="dietary-preferences-group">
-                        <p>Dietary preferences:</p>
-                        <input type="radio" id="none" name="dietary-preference" value="none" onChange={handleDietaryPreferenceChange} />
-                        <label htmlFor="none">None</label><br />
-
-                        <input type="radio" id="vegan" name="dietary-preference" value="vegan" onChange={handleDietaryPreferenceChange} />
-                        <label htmlFor="vegan">Vegan</label><br />
-
-                        <input type="radio" id="vegetarian" name="dietary-preference" value="vegetarian" onChange={handleDietaryPreferenceChange} />
-                        <label htmlFor="vegetarian">Vegetarian</label><br />
-
-                        <input type="radio" id="pescatarian" name="dietary-preference" value="pescatarian" onChange={handleDietaryPreferenceChange} />
-                        <label htmlFor="pescatarian">Pescatarian</label><br />
-
-                        <input type="radio" id="paleo" name="dietary-preference" value="paleo" onChange={handleDietaryPreferenceChange} />
-                        <label htmlFor="paleo">Paleo</label><br />
-
-                        <input type="radio" id="keto" name="dietary-preference" value="keto" onChange={handleDietaryPreferenceChange} />
-                        <label htmlFor="keto">Keto</label><br />
-
-                        <input type="radio" id="gluten-free" name="dietary-preference" value="gluten-free" onChange={handleDietaryPreferenceChange} />
-                        <label htmlFor="gluten-free">Gluten-free</label><br />
-
-                        <input type="radio" id="dairy-free" name="dietary-preference" value="dairy-free" onChange={handleDietaryPreferenceChange} />
-                        <label htmlFor="dairy-free">Dairy-free</label><br />
+                        <input type="radio" id="extra-active" name="activity-level" value="extra-active" checked={profileDetails.activityLevel === "extra-active"} onChange={handleActivityLevelChange} />
+                        <label htmlFor="extra-active">Extra active: very intense exercise daily, or physical job</label><br />
                     </div>
                     <div className="health-goal-group">
-                        <label htmlFor="health-goals">Health goal:</label>
-                        <select id="health-goals" name="health-goal" onChange={handleHealthGoalChange}>
-                            <option value="maintain">Maintain weight</option>
-                            <option value="mild-loss">Mild weight loss</option>
-                            <option value="loss">Weight loss</option>
-                            <option value="extreme-loss">Extreme weight loss</option>
-                            <option value="mild-gain">Mild weight gain</option>
-                            <option value="gain">Weight gain</option>
-                            <option value="extreme-gain">Extreme weight gain</option>
-                        </select>
+                        <p>Health goal:</p>
+                        <input type="radio" id="maintain" name="health-goal" value="maintain" checked={profileDetails.healthGoals === "maintain"} onChange={handleHealthGoalChange} />
+                        <label htmlFor="maintain">Maintain weight</label><br />
+
+                        <input type="radio" id="mild-loss" name="health-goal" value="mild-loss" checked={profileDetails.healthGoals === "mild-loss"} onChange={handleHealthGoalChange} />
+                        <label htmlFor="mild-loss">Mild weight loss</label><br />
+
+                        <input type="radio" id="loss" name="health-goal" value="loss" checked={profileDetails.healthGoals === "loss"} onChange={handleHealthGoalChange} />
+                        <label htmlFor="loss">Weight loss</label><br />
+
+                        <input type="radio" id="extreme-loss" name="health-goal" value="extreme-loss" checked={profileDetails.healthGoals === "extreme-loss"} onChange={handleHealthGoalChange} />
+                        <label htmlFor="extreme-loss">Extreme weight loss</label><br />
+
+                        <input type="radio" id="mild-gain" name="health-goal" value="mild-gain" checked={profileDetails.healthGoals === "mild-gain"} onChange={handleHealthGoalChange} />
+                        <label htmlFor="mild-gain">Mild weight gain</label><br />
+
+                        <input type="radio" id="gain" name="health-goal" value="gain" checked={profileDetails.healthGoals === "gain"} onChange={handleHealthGoalChange} />
+                        <label htmlFor="gain">Weight gain</label><br />
+
+                        <input type="radio" id="extreme-gain" name="health-goal" value="extreme-gain" checked={profileDetails.healthGoals === "extreme-gain"} onChange={handleHealthGoalChange} />
+                        <label htmlFor="extreme-gain">Extreme weight gain</label><br />
                     </div>
                     <div className="form-submit-container">
                         <button onClick={handleProfileSaveChanges}>Calculate macros</button>
