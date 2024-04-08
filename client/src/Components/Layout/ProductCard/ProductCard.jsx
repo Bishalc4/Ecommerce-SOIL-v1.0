@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types'
 import "./ProductCard.scss"
 import { Link } from "react-router-dom"
+import AddCartButton from '../AddCartButton/AddCartButton';
 
 function ProductCard(props) {
     const productPrice = parseFloat(props.product.price).toFixed(2);
@@ -27,7 +28,9 @@ function ProductCard(props) {
             )}
             
             <p>{productName}</p>
-            <button>Add to cart</button>
+            <div classname="cartButton-container" >
+            <AddCartButton productId={props.product.productId} />
+            </div>
         </div>
     );
 }
