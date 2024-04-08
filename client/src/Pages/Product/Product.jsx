@@ -1,5 +1,6 @@
 import { useLocation } from 'react-router-dom';
 import "./Product.scss"
+import AddCartButton from '../../Components/Layout/AddCartButton/AddCartButton';
 
 function Product() {
     const location = useLocation();
@@ -39,7 +40,7 @@ function Product() {
                             </>
                         )}
                         
-                        <button className={`add-to-cart-btn ${productSpecialPrice !== null ? 'special' : 'original'}`} >Add to cart</button> {/* add to cart component goes here */}
+                        <AddCartButton productId={location.state.product.productId} className={`add-to-cart-btn ${productSpecialPrice !== null ? 'special' : 'original'}`} /> {/* add to cart component goes here */}
                     </div>
                 </div>
             </div>
