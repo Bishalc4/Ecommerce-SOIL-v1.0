@@ -1,4 +1,4 @@
-import Infographic from "../../assets/Infographic.png"
+// import Infographic from "../../assets/Infographic.png"
 import DietNutritionImage from "../../assets/DietNutritionImage.jpg"
 import "./Home.scss"
 
@@ -19,16 +19,12 @@ function Home() {
                 </div>
             </div>
 
-            <div className="infographic-container">
-                <div className="infographic">
-                    <img src={Infographic} alt="Organic Foods Infographic"></img>
-                </div>
-            </div>
+            {/* <div className="infographic-container">
+                <img src={Infographic} alt="Organic Foods Infographic"></img>
+            </div> */}
 
             <div className="diet-nutrition-container">
-                <div className="diet-nutrition-image-container">
-                    <img src={DietNutritionImage} alt="Diet Nutrition Image" className="diet-nutrition-img"></img>
-                </div>
+                <img src={DietNutritionImage} alt="Diet Nutrition Image" className="diet-nutrition-img"></img>
                 <div className="diet-nutrition-info">
                     <h1>Diet & Nutrition</h1>
                     <p>
@@ -41,7 +37,7 @@ function Home() {
                     <button>Read More</button>
                 </div>
             </div>
-
+{/* 
             <div className="community-row">
                 <div className="community-container">
                     <div className="community-info-container">
@@ -54,7 +50,7 @@ function Home() {
                         <button>Read More</button>
                     </div>
                 </div>
-            </div>
+            </div> */}
         </div>
     );
 }

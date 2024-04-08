@@ -44,54 +44,59 @@
                 font-size: 18px;
                 cursor: pointer;
             }
-
-            .temp{
-                display: flex;
-                justify-content: center;
-                flex-direction: column;
-                align-items: center;
-                padding-left: 10%;
-                padding-right: 10%;
-                text-align: center;
-
-                
-            }
         }
     }
+
     @media screen and (max-width: 768px) {
         .row .overlay {
             width: 90%; // Adjusted width for smaller screens
         }
     }
+
     .infographic-container{
         width: 100%;
-        height: 55vh;
+        height: 50vh;
         background-color: #68B691;
         display: flex;
         align-items: center;
         justify-content: center;
+
+        img{
+            height: 80%;
+        }
     }
+
+    @media screen and (max-width: 1200px) {
+        .infographic-container {
+            height: auto;
+            img{
+                width: 95%;
+                height: auto;
+            }
+        }
+    }
+
     .diet-nutrition-container{
         background-color: #272727;
         width: 100%;
-        height: 850px;
+        height: 80vh;
         display: flex;
         flex-direction: row;
+        align-items: center;
         padding: $common-padding;
         width: $common-width;
 
-        .diet-nutrition-image-container{
-            width: 100%;
-            padding-top: 50px;
-            padding-bottom: 50px;
-
-            img{
-                width: 92%;
-            }
+        img{
+            flex: 1;
+            padding-top: 5%;
+            padding-bottom: 5%;
+            height: 90%;
+            max-width: 50%;
         }
 
         .diet-nutrition-info{
-            width: 100%;
+            flex: 1;
+            max-width: 50%;
             color: white;
             display: flex;
             flex-direction: column;
@@ -100,13 +105,13 @@
             padding-right: 100px;
 
             h1{
-                font-size: 92px;
+                font-size: 450%;
                 margin: 0;
                 font-weight: 400;
             }
 
             p{
-                font-size: 27px;
+                font-size: 180%;
                 padding-bottom: 10px;
             }
 
@@ -119,6 +124,22 @@
                     border-radius: 50px;
                     font-size: 18px;
                     cursor: pointer;
+            }
+        }
+    }
+
+    @media screen and (max-width: 1350px) {
+        .diet-nutrition-container{
+            background-color: #3f3e3e;
+            h1{
+                font-size: 180%;
+                margin: 0;
+                font-weight: 400;
+            }
+
+            p{
+                font-size: 100%;
+                padding-bottom: 10px;
             }
         }
     }
