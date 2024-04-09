@@ -1,9 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import RecipeCard from "../Recipe/RecipeCard";
 import "./RecipeSearch.scss"
 
 function RecipeSearch() {
     const [recipes, setRecipes] = useState([]);
+    const [showRecipes, setShowRecipes] = useState(false);
     const appId = "c57a8075";
     const appKey = "a36807d73b336db98850d7a307c3f226";
 
@@ -18,10 +19,6 @@ function RecipeSearch() {
                                         proteinMinimum: "", //e.g. 100-300, 400 (max 400), 200+ (over 200)                               
                                         proteinMaximum: "", //e.g. 100-300, 400 (max 400), 200+ (over 200)                               
     });
-
-    useEffect(() => {
-        
-      }, []);
     
     function handleQueryText(e) {
         setQuery({...query, queryText: e.target.value});
@@ -133,7 +130,8 @@ function RecipeSearch() {
           })
           .catch(error => {
             console.error('Error fetching recipes:', error);
-          });
+        });
+        setShowRecipes(true);
     }
 
     return(
@@ -184,30 +182,39 @@ function RecipeSearch() {
                 </div>
                 <div>
                     <span>Calories</span>
-                    <input id="caloriesMinimum" type="number" placeholder="Minimum calories" min="1" step="1" value={query.caloriesMinimum} onChange={handleCaloriesMinimum}/>
+                    <input id="caloriesMinimum" type="number" min="1" step="1" value={query.caloriesMinimum} onChange={handleCaloriesMinimum}/>
                     <span>-</span>
-                    <input id="caloriesMaximum" type="number" placeholder="Maximum calories" min={query.caloriesMinimum + 1} step="1" value={query.caloriesMaximum} onChange={handleCaloriesMaximum}/>
+                    <input id="caloriesMaximum" type="number" min={query.caloriesMinimum + 1} step="1" value={query.caloriesMaximum} onChange={handleCaloriesMaximum}/>
                 </div>
                 <div>
                     <span>Protein</span>
-                    <input id="proteinMinimum" type="number" placeholder="Minimum protein" min="1" step="1" value={query.proteinMinimum} onChange={handleProteinMinimum}/>
+                    <input id="proteinMinimum" type="number" min="1" step="1" value={query.proteinMinimum} onChange={handleProteinMinimum}/>
                     <span>-</span>
-                    <input id="proteinMaximum" type="number" placeholder="Maximum protein" min={query.proteinMinimum + 1} step="1" value={query.proteinMaximum} onChange={handleProteinMaximum}/>
+                    <input id="proteinMaximum" type="number" min={query.proteinMinimum + 1} step="1" value={query.proteinMaximum} onChange={handleProteinMaximum}/>
                 </div>
                 <div>
                     <span>Carbohydrates</span>
-                    <input id="carbohydratesMinimum" type="number" placeholder="Minimum carbohydrates" min="1" step="1" value={query.carbohydratesMinimum} onChange={handleCarbohydratesMinimum}/>
+                    <input id="carbohydratesMinimum" type="number" min="1" step="1" value={query.carbohydratesMinimum} onChange={handleCarbohydratesMinimum}/>
                     <span>-</span>
-                    <input id="carbohydratesMaximum" type="number" placeholder="Maximum carbohydrates" min={query.carbohydratesMinimum + 1} step="1" value={query.carbohydratesMaximum} onChange={handleCarbohydratesMaximum}/>
+                    <input id="carbohydratesMaximum" type="number" min={query.carbohydratesMinimum + 1} step="1" value={query.carbohydratesMaximum} onChange={handleCarbohydratesMaximum}/>
                 </div>
             </div>
-            <div className="recipe-container">
-                <ul>
-                    {recipes.map((recipe, index) => (
-                        <RecipeCard key={index} recipe={recipe.recipe} />
-                    ))}
-                </ul>
-            </div>
+            {/* showRecipes */}
+            {showRecipes ? (
+                <div className="recipe-container">
+                    {recipes.length === 0 ? ( // Check if recipes array is empty
+                        <h2>Please try again</h2> // Render heading if recipes array is empty
+                    ) : (
+                        <ul>
+                            {recipes.map((recipe, index) => (
+                                <RecipeCard key={index} recipe={recipe.recipe} />
+                            ))}
+                        </ul>
+                    )}
+                </div>
+            ) : (
+                <></>
+            )}
         </div>
     );
 }
