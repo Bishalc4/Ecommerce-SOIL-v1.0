@@ -1,7 +1,7 @@
 import { Link,  useNavigate} from "react-router-dom"
 import { useState, useEffect} from'react'
 import AuthHeader from "../../Components/Layout/Auth-Header/AuthHeader"
-import validate from "../FormValidation/LoginValidation"
+import validate from "../../Functions/LoginValidation"
 import "./Login.scss"
 
 //Users will use this page to login

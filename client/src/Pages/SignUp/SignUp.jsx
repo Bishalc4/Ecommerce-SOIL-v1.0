@@ -2,7 +2,7 @@ import { Link, useNavigate} from "react-router-dom"
 import {useState, useEffect} from 'react'
 import AuthHeader from "../../Components/Layout/Auth-Header/AuthHeader"
 import "./SignUp.scss"
-import validate from "../FormValidation/SignUpValidation"
+import validate from "../../Functions/SignUpValidation"
 
 function SignUp() {
     const navigate = useNavigate();

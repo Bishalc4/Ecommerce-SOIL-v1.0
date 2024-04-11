@@ -1,7 +1,16 @@
+import { Link, useNavigate} from "react-router-dom"
+
 function AddCartButton ( {productId}) {
+    const navigate = useNavigate();
 
     function handleClick(e) {
     const user = JSON.parse(localStorage.getItem("user"));
+    if(!user) {
+        alert("To add to your cart, you'll need an account");
+        navigate("/login");
+    }
+
+    else {
 
     const quantityCount = 1;
 
@@ -27,6 +36,7 @@ function AddCartButton ( {productId}) {
 
     localStorage.setItem("cart", JSON.stringify(existingCart));
     }
+}
 
     return (
             <button onClick={handleClick}>Add to cart</button>
