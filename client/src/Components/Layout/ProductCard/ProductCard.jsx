@@ -28,7 +28,7 @@ function ProductCard(props) {
             )}
             
             <p>{productName}</p>
-            <div classname="cartButton-container" >
+            <div className="cartButton-container" >
             <AddCartButton productId={props.product.productId} />
             </div>
         </div>
