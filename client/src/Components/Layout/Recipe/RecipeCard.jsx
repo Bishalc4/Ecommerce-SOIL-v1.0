@@ -1,3 +1,4 @@
+import AddMealBtn from "../AddMealBtn/AddMealBtn.jsx"
 import "./RecipeCard.scss"
 
 function RecipeCard(recipe) {
@@ -8,7 +9,7 @@ function RecipeCard(recipe) {
     const recipeCarbohydrates = Math.round(recipe.recipe.totalNutrients.CHOCDF.quantity/recipe.recipe.yield);
 
     //determine percentage of daily nutrient intake
-    // const percentageDailyCalories = 100 * (recipeCalories/macros.calories);
+    //const percentageDailyCalories = 100 * (recipeCalories/macros.calories);
 
     return(
         // make it so that if the user clicks on any part of the div aside from the button
@@ -24,7 +25,7 @@ function RecipeCard(recipe) {
                 <p>{recipeCarbohydrates}g of carbohydrates</p>
             </div>
             <a href={recipe.recipe.url} target="_blank" rel="noopener noreferrer">View Recipe</a><br/>
-            <button>Add to planner</button>
+            <AddMealBtn></AddMealBtn>
         </div>
     );
 }
