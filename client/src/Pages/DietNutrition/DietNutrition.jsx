@@ -79,22 +79,22 @@ function DietNutrition(){
                     and nutrient needs.
                 </p>
             </div> */}
-            <form className="goals-form">
+            <form className="goals-form"  onSubmit={handleProfileSaveChanges}>
                 <div className="column">
                     <h2>Age</h2>
-                    <input type="number" min="1" step="1" onChange={handleAgeChange} value={profileDetails.age}></input>
+                    <input type="number" min="1" step="1" max="80" onChange={handleAgeChange} value={profileDetails.age} required></input>
                     <h2>Sex</h2>
                     <div className="sex-container">
-                        <input type="radio" id="male" name="sex" onChange={handleSexChange} checked={profileDetails.sex === "male"} value="male"/>
+                        <input type="radio" id="male" name="sex" onChange={handleSexChange} checked={profileDetails.sex === "male"} value="male" required/>
                         <label htmlFor="male" className="buttton-style">Male</label>
 
-                        <input type="radio" id="female" name="sex" onChange={handleSexChange} checked={profileDetails.sex === "female"} value="female"/>
+                        <input type="radio" id="female" name="sex" onChange={handleSexChange} checked={profileDetails.sex === "female"} value="female" required/>
                         <label htmlFor="female" className="buttton-style">Female</label>
                     </div>
                     <h2>Height (cm)</h2>
-                    <input type="number" min="0.01" step="any" onChange={handleHeightChange} value={profileDetails.height}></input>
+                    <input type="number" min="100" step="0.01" onChange={handleHeightChange} value={profileDetails.height} required></input>
                     <h2>Weight (kg)</h2>
-                    <input type="number" min="0.01" step="any" onChange={handleWeightChange} value={profileDetails.weight}></input>
+                    <input type="number" min="30" step="0.01" onChange={handleWeightChange} value={profileDetails.weight} required></input>
                 </div>
                 <div className="column">
                     <h2>Activity level</h2>
@@ -149,7 +149,7 @@ function DietNutrition(){
                             <label htmlFor="extreme-gain">Extreme weight gain</label><br />
                         </div>
                     </div>
-                    <button onClick={handleProfileSaveChanges}>Calculate macros</button>
+                    <button type="submit">Calculate macros</button>
                 </div>
             </form>
             <div className="macros-row">
