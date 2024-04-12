@@ -59,15 +59,7 @@ function RecipeSearch() {
     function handleCarbohydratesMaximum(e) {
         setQuery({...query, carbohydratesMaximum: e.target.value});
     }
-
-    //https://api.edamam.com/api/recipes/v2?type=public&q=chicken&app_id=c57a8075&app_key=a36807d73b336db98850d7a307c3f226&diet=high-protein&health=alcohol-free&mealType=Lunch&calories=400-1000&nutrients%5BCHOCDF%5D=50%2B&nutrients%5BCHOCDF.net%5D=1-1000&nutrients%5BPROCNT%5D=10%2B
-    //if min have a %2B after the number (e.g. "50%2B")
-    //if max just put number "50"
-
-    //${query.queryText}&app_id=${appId}&app_key=${appKey}&diet=${}&health=${}&mealType=${}&calories=${}&nutrients%5BCHOCDF%5D=${}%2B&nutrients%5BPROCNT%5D=${}%2B`
-
-    //https://api.edamam.com/api/recipes/v2?type=public&q=chicken&app_id=c57a8075&app_key=a36807d73b336db98850d7a307c3f226&diet=high-fiber&health=alcohol-free&mealType=Breakfast&calories=400-1000&nutrients%5BCHOCDF%5D=50&nutrients%5BPROCNT%5D=10%2B
-    //&nutrients%5BCHOCDF%5D=50&nutrients%5BPROCNT%5D=10%2B
+    
     function getQueryFilters() {
         var filter = "";
         if (query.dietLabel != "") {
@@ -121,7 +113,6 @@ function RecipeSearch() {
 
     function handleGetRecipes() {
 
-        getQueryFilters();
         const queryFilters = getQueryFilters();
         fetch(`https://api.edamam.com/api/recipes/v2?type=public&q=${query.queryText}&app_id=${appId}&app_key=${appKey}${queryFilters}`)
           .then(response => response.json())
@@ -199,7 +190,6 @@ function RecipeSearch() {
                     <input id="carbohydratesMaximum" type="number" min={query.carbohydratesMinimum + 1} step="1" value={query.carbohydratesMaximum} onChange={handleCarbohydratesMaximum}/>
                 </div>
             </div>
-            {/* showRecipes */}
             {showRecipes ? (
                 <div className="recipe-container">
                     {recipes.length === 0 ? ( // Check if recipes array is empty
