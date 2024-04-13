@@ -1,19 +1,18 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import RecipeSearch from "../../Components/Layout/RecipeSearch/RecipeSearch.jsx"
 import { calculateMacros } from "../../Functions/MacrosCalculator"
 import "./DietNutrition.scss"
 
 //Page for diet and nutrition
 function DietNutrition(){
-    const currUser = JSON.parse((localStorage.getItem("user")));
-    const profiles = localStorage.getItem("profiles");
-    var profilesArray = JSON.parse(profiles);
+    const currUser = JSON.parse((localStorage.getItem("user"))); //get curr user
+    var profilesArray = JSON.parse(localStorage.getItem("profiles")); //get "profiles" from localStorage
 
     let currUserProfile = null;
-    let userProfileIndex = 0;
+    let userProfileIndex = 0; //index of the current user within the profilesArray
     for (const user of profilesArray) {
-        if (user.username === currUser) {
-            currUserProfile = user;
+        if (user.username === currUser) { //makes currUserProfile the curr users object from the profilesArray
+            currUserProfile = user; 
             break;
         }
         userProfileIndex++;
@@ -25,11 +24,39 @@ function DietNutrition(){
                                                         height: currUserProfile.height,
                                                         activityLevel: currUserProfile.activityLevel,
                                                         healthGoals: currUserProfile.healthGoals
-      });
+                                                        });
 
-      const [showInputs, setShowInputs] = useState(true);
+    const [showInputs, setShowInputs] = useState(true); //to show the macros, recipe search etc.
+    const [macros, setMacros] = useState(null); //stores curr user's macros requirements
 
-      const [macros, setMacros] = useState(null);
+    function hasUser(user, usersArray) {
+        return usersArray.some(user_ => user_.username === user);
+    }
+
+    useEffect(() => {
+        if (localStorage.getItem("macros") === null) { //adds key to local storage if it doesn't already exist
+            localStorage.setItem("macros", JSON.stringify([]));
+        }
+        
+        let macrosArray = JSON.parse(localStorage.getItem("macros"));
+
+        if (!hasUser(currUser, macrosArray)) {
+            const newUser = { username: currUser, macrosDetails: {}}; //creates an object for the new user (will be stored in macros key)
+            macrosArray.push(newUser); //pushes to the JS array
+            localStorage.setItem("macros", JSON.stringify(macrosArray)); //place it in the local storage
+        }
+
+        if (hasUser(currUser, macrosArray)) { //if the username is already in macros
+            const userIndex = macrosArray.findIndex(user => user.username === currUser);
+
+            macrosArray[userIndex].macrosDetails = macros;
+            localStorage.setItem("macros", JSON.stringify(macrosArray));
+        }
+
+        if (localStorage.getItem("meals") === null) { //adds key to local storage if it doesn't already exist
+            localStorage.setItem("meals", JSON.stringify([]));
+        }
+    }, [macros, currUser])
 
     function handleAgeChange(e) {
         setProfileDetails({...profileDetails, age: e.target.value});
@@ -65,8 +92,7 @@ function DietNutrition(){
         profilesArray[userProfileIndex].healthGoals = profileDetails.healthGoals;
         localStorage.setItem("profiles", JSON.stringify(profilesArray));
 
-        const calculatedMacros = calculateMacros(profileDetails);
-        setMacros(calculatedMacros);
+        setMacros(calculateMacros(profileDetails));
 
         setShowInputs(false);
     }
@@ -114,10 +140,6 @@ function DietNutrition(){
                         <div className="option-container">
                             <input type="radio" id="active" name="activity-level" value="active" checked={profileDetails.activityLevel === "active"} onChange={handleActivityLevelChange} />
                             <label htmlFor="active">Active<br />daily exercise or intense exercise 3-4 times/week</label><br />
-                        </div>
-                        <div className="option-container">
-                            <input type="radio" id="very-active" name="activity-level" value="very-active" checked={profileDetails.activityLevel === "very-active"} onChange={handleActivityLevelChange} />
-                            <label htmlFor="very-active">Very active<br />intense exercise 6-7 times/week</label><br />
                         </div>
                         <div className="option-container">
                             <input type="radio" id="extra-active" name="activity-level" value="extra-active" checked={profileDetails.activityLevel === "extra-active"} onChange={handleActivityLevelChange} />
