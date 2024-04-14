@@ -1,24 +1,29 @@
+import { useState } from 'react';
+import PropTypes from 'prop-types';
+import AddToMealPopUp from "../AddToMealPopUp/AddToMealPopUp"
+import "./AddMealBtn.scss"
 
-function AddMealBtn() {
+function AddMealBtn(props) {
+  const [showPopup, setShowPopup] = useState(false);
 
-    //should add to a local storage button
-    /*local storage should contain the following information:
-        Sunday = [Breafast, Lunch, Dinner] -> max limit is 5 meals
-        Monday = [Breafast, Lunch, Dinner] -> max limit is 5 meals
-        Tuesday = [Breafast, Lunch, Dinner] -> max limit is 5 meals
-        Wednesday = [Breafast, Lunch, Dinner] -> max limit is 5 meals
-        Thursday = [Breafast, Lunch, Dinner] -> max limit is 5 meals
-        Friday = [Breafast, Lunch, Dinner] -> max limit is 5 meals
-        Saturday = [Breafast, Lunch, Dinner] -> max limit is 5 meals */
+  const handleClick = () => {
+    setShowPopup(true);
+  };
 
-    /*When a user clicks on the add to planner button it should show up
-    with a pop up asking them to select a day and a meal (cannot add to the same meal)*/
-
-    return(
-        <>
-            <button>Add to planner</button>
-        </>
-    );
+  return (
+    <div className="add-meal-btn-container">
+      <button onClick={handleClick}>Add to Planner</button>
+      {showPopup && (
+        <div>
+          <div className="overlay" onClick={() => setShowPopup(false)}></div>
+          <AddToMealPopUp onClose={() => setShowPopup(false)} id={props.id}/>
+        </div>
+      )}
+    </div>
+  );
+}
+AddMealBtn.propTypes = {
+  id: PropTypes.string.isRequired
 }
 
 export default AddMealBtn
