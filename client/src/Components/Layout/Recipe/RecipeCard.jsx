@@ -3,6 +3,8 @@ import "./RecipeCard.scss"
 
 function RecipeCard(recipe) {
     //determine the average nutries per serving
+    const uri = recipe.recipe.uri;
+    const recipeTag = uri.split("_")[1];
     const recipeCalories = Math.round(recipe.recipe.calories/recipe.recipe.yield);
     const recipeFat = Math.round(recipe.recipe.totalNutrients.FAT.quantity/recipe.recipe.yield);
     const recipeProtein = Math.round(recipe.recipe.totalNutrients.PROCNT.quantity/recipe.recipe.yield);
@@ -25,7 +27,7 @@ function RecipeCard(recipe) {
                 <p>{recipeCarbohydrates}g of carbohydrates</p>
             </div>
             <a href={recipe.recipe.url} target="_blank" rel="noopener noreferrer">View Recipe</a><br/>
-            <AddMealBtn></AddMealBtn>
+            <AddMealBtn id={recipeTag} />
         </div>
     );
 }
