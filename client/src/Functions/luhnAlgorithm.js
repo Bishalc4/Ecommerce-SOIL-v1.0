@@ -1,8 +1,8 @@
-function luhnAlgorithm (cardNumber) {
+function luhnAlgorithm(cardNumber) {
     let sum = 0;
     let doubleUp = false;
 
-    for (let i = cardNumber.length - 1; i >= 0; i -= 2) {
+    for (let i = cardNumber.length - 1; i >= 0; i--) {
         let digit = parseInt(cardNumber.charAt(i));
 
         if (doubleUp) {
@@ -12,10 +12,10 @@ function luhnAlgorithm (cardNumber) {
             }
         }
         sum += digit;
+        doubleUp = !doubleUp;
     }
-    if(sum % 10 === 0) {
-        return true;
-    }
-    return false;
+
+    return sum % 10 === 0;
 }
-export default luhnAlgorithm
+
+export default luhnAlgorithm;
