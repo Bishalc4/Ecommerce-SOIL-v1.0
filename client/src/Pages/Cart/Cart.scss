@@ -1,6 +1,94 @@
-@import "../../common.scss";
-
-.cart-container{
-    width: $common-width;
-    padding: $common-padding;
+.heading-title {
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+  margin: auto;
 }
+.cartPage-container {
+  width: 60%;
+  margin: auto; 
+
+  .cart-container img {
+    width: 70px;
+    height: 70px;
+  }
+  .cart-detail {
+    display: flex;
+    width: 135px;
+
+    p {
+    font-weight: bold;
+    margin-left: 10px;
+    margin-top: 30px;
+    }
+  }
+
+  .cart-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+    border-bottom: 2px solid skyblue;
+    padding-bottom: 5px;
+  }
+
+  .quantity-buttons button {
+    padding: 5px 10px;
+    font-weight: bold;
+    margin-right: 5px;
+  }
+
+
+
+  .price-and-delete button {
+    padding: 5px 10px;
+    font-weight: bold;
+    border: none;
+    outline: none;
+    color: white;
+    background-color: rgb(148, 67, 51);
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .price-and-delete span {
+    background-color: lightgreen;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-right: 10px;
+  }
+}
+  
+
+.cartTotal {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+
+    .total-title {
+      font-size: 1.5rem;
+      color: rgb(24, 201, 127);
+      font-weight: bold;
+    }
+    
+    .total-amount {
+      font-size: 1.5rem;
+      color: green;
+      font-weight: bold;
+    }
+  }
+
+  .cartProceed {
+    margin-top: 30px;
+    margin-bottom: 60px;
+    text-align: right;
+
+    button {
+      width: 15%;
+      color: white;
+      font-size: 1.2rem; 
+      background-color: green;
+      border-radius: 5px;
+      padding: 10px 20px; 
+    }
+  }
