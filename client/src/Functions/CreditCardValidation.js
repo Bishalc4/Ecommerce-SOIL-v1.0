@@ -19,19 +19,21 @@ function validate(values) {
     if(!values.expMM) {
         errors.expMM = 'Month is required';
     }
-    if(values.expMM.length !== 2 && values.expMM >= month && values.expMM <=12) {
+    if(values.expMM.length !== 2 && values.expMM.length !== 1 && values.expMM >= month && values.expMM <=12) {
         errors.expMM = 'Month invalid';
     }
-
-    if(values.expMM.length !== 4 && values.expMM >= year) {
+    if(!values.expYY) {
+        errors.expYY = 'Year is required';
+    }
+    if(values.expYY.length !== 4 && values.expYY >= year) {
         errors.expYY = 'Year invalid';
     }
 
     if(!values.cvv) {
         errors.cvv = 'CVV is required';
     }
-    if(values.cvv.length !== 4 || values.cvv.length !== 4 )
-        errors.cvv = 'CVV invalid'
+    if(values.cvv.length !== 4 && values.cvv.length !== 3 ) {
+        errors.cvv = 'CVV invalid'; }
 
     return errors;
 }
