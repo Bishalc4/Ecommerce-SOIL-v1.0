@@ -152,4 +152,15 @@ $input-checked: black;
             text-align: center
         }
     }
+
+    .recipe-search-row{
+        width: 100%;
+    }
+
+    .meal-plan-row{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 }

@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import RecipeSearch from "../../Components/Layout/RecipeSearch/RecipeSearch.jsx"
+import MealPlan from "../../Components/Layout/MealPlan/MealPlan.jsx";
 import { calculateMacros } from "../../Functions/MacrosCalculator"
 import "./DietNutrition.scss"
 
@@ -82,6 +83,24 @@ function DietNutrition(){
         setProfileDetails({...profileDetails, healthGoals: e.target.value});
     }
 
+    function mealsLocalStorage(){
+        const noUserDiet = {Sunday: { Breakfast: null, Lunch: null, Dinner: null },
+                            Monday: { Breakfast: null, Lunch: null, Dinner: null },
+                            Tuesday: { Breakfast: null, Lunch: null, Dinner: null },
+                            Wednesday: { Breakfast: null, Lunch: null, Dinner: null },
+                            Thursday: { Breakfast: null, Lunch: null, Dinner: null },
+                            Friday: { Breakfast: null, Lunch: null, Dinner: null },
+                            Saturday: { Breakfast: null, Lunch: null, Dinner: null }};
+        
+        const currUser = JSON.parse(localStorage.getItem("user"));
+        var mealsArray = JSON.parse(localStorage.getItem("meals"));
+
+        if (mealsArray.findIndex(user => user.username === currUser) === -1) {
+            mealsArray.push({username: currUser, diet: noUserDiet});
+            localStorage.setItem("meals", JSON.stringify(mealsArray));
+        }
+    }
+
     function handleProfileSaveChanges(e) {
         e.preventDefault();
         profilesArray[userProfileIndex].age = profileDetails.age;
@@ -93,7 +112,7 @@ function DietNutrition(){
         localStorage.setItem("profiles", JSON.stringify(profilesArray));
 
         setMacros(calculateMacros(profileDetails));
-
+        mealsLocalStorage();
         setShowInputs(false);
     }
 
@@ -187,14 +206,20 @@ function DietNutrition(){
                     </div>
                 )}
             </div>
-            <div>
+            <div className="recipe-search-row">
                 {showInputs ? (
                     <>
                     </>
                 ) : (
-                    <div>
-                        <RecipeSearch/>
-                    </div>
+                    <RecipeSearch/>
+                )}
+            </div>
+            <div className="meal-plan-row">
+                {showInputs ? (
+                    <>
+                    </>
+                ) : (
+                    <MealPlan />
                 )}
             </div>
         </ div>
