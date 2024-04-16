@@ -1,31 +1,62 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import "./AddToMealPopUp.scss"
 
 // eslint-disable-next-line react/prop-types
 function AddToMealPopUp({onClose, id}) {
   const value = id;
-  // const app_id = "c57a8075";
-  // const app_key = "a36807d73b336db98850d7a307c3f226";
-  /*To get data:
-    https://api.edamam.com/api/recipes/v2/{value}?type=public&app_id={app_id}&app_key={app_key}
-  */
-  const [meal, setMeal] = useState({ day: "Monday", meal: "Breakfast" });
 
-  /*access local storage and make it so that this gets the current user and makes the
-  current user's mealPlan = the below meal plan (this will make it easy to do)*/
+  const currUser = JSON.parse(localStorage.getItem("user") || 'null');
+  var mealsArray = JSON.parse(localStorage.getItem("meals") || '[]');
 
-  const [mealPlan, setMealPlan] = useState({Sunday: [],
-                                            Monday: [],
-                                            Tuesday: [],
-                                            Wednesday: [],
-                                            Thursday: [],
-                                            Friday: [],
-                                            Saturday: []
-                                          });
+  //get the index of the currUser in the mealsArray object
+  let userAccountIndex = 0;
+  for (const user of mealsArray) {
+      if (user.username === currUser) {
+          break;
+      }
+      userAccountIndex++;
+  }
 
-  useEffect(() => {
-    localStorage.setItem('mealPlan', JSON.stringify(mealPlan));
-  }, [mealPlan]);
+  const [meal, setMeal] = useState({day: "Monday", meal: "Breakfast"});
+
+  const [mealPlan, setMealPlan] = useState(() => {
+    const storedMealPlan = mealsArray[userAccountIndex].diet;
+    console.log(storedMealPlan);
+    return storedMealPlan ? storedMealPlan : { //this should only be used for when there is no currUser
+      Sunday: { Breakfast: null, Lunch: null, Dinner: null },
+      Monday: { Breakfast: null, Lunch: null, Dinner: null },
+      Tuesday: { Breakfast: null, Lunch: null, Dinner: null },
+      Wednesday: { Breakfast: null, Lunch: null, Dinner: null },
+      Thursday: { Breakfast: null, Lunch: null, Dinner: null },
+      Friday: { Breakfast: null, Lunch: null, Dinner: null },
+      Saturday: { Breakfast: null, Lunch: null, Dinner: null }
+    }
+  });
+
+  const addMealForDay = (day, mealType, newMeal) => {
+    console.log(`Updating ${day} ${mealType} with ${newMeal}`);
+    setMealPlan(prevPlan => {
+        const updatedPlan = {
+            ...prevPlan,
+            [day]: {
+                ...prevPlan[day],
+                [mealType]: newMeal
+            }
+        };
+
+        setTimeout(() => {
+          mealsArray[userAccountIndex].diet = updatedPlan;
+          localStorage.setItem("meals", JSON.stringify(mealsArray));
+          onClose(); // Call onClose after the local storage is updated
+        }, 0);
+        return updatedPlan;
+    });
+  };
+
+  function addMeal(e) {
+    e.preventDefault();
+    addMealForDay(meal.day, meal.meal, value);
+  }
   
   function handleDayChange(e) {
     setMeal({...meal, day: e.target.value});
@@ -35,24 +66,10 @@ function AddToMealPopUp({onClose, id}) {
     setMeal({...meal, meal: e.target.value});
   }
 
-  function handleSubmit(e) {
-    e.preventDefault();
-    //when the user submits the form modify the savedMealPlan variable with their updated values
-      //get the previous savedMealPlan object
-      //make the relevant modifications
-      //set if necessary 
-    onClose();  // close the popup after submission
-  }
-
-  useEffect(() => {
-    /*when the meal plan is changed update the local storage for the current user
-    with the new user's meal preferences*/
-  }, [mealPlan]);
-
   return (
     <div className="add-to-meal-pop-up-container">
       <p>{value}</p>
-      <form onSubmit={handleSubmit}>
+      <form>
           <select value={meal.day} onChange={handleDayChange}>
             <option value="Monday">Monday</option>
             <option value="Tuesday">Tuesday</option>
@@ -67,7 +84,7 @@ function AddToMealPopUp({onClose, id}) {
             <option value="Lunch">Lunch</option>
             <option value="Dinner">Dinner</option>
           </select>
-        <button type="submit" >Add</button>
+          <button onClick={addMeal}>Add Meal</button>
       </form>
       <button onClick={onClose}>Cancel</button>
     </div>
