@@ -4,7 +4,7 @@ import "./Header.scss"
 import logo from "../../../assets/SOIL-logo.svg"
 import ProfileButton from "../../../Pages/ProfileButton/ProfileButton.jsx"
 import CartButton from "../../../Pages/CartButton/CartButton.jsx"
-import Search from "../../../Pages/Search/Search.jsx"
+import SearchBtn from '../SearchBtn/SearchBtn.jsx'
 
 function Header(props) {
     const isLoggedIn = props.isLoggedIn;
@@ -17,7 +17,7 @@ function Header(props) {
                     <img src={logo} alt="SOIL_Logo" className="logo"/>
                 </Link>
 
-                <Search />
+                <SearchBtn />
 
                 <div className="site-buttons">
                     {isLoggedIn ? (

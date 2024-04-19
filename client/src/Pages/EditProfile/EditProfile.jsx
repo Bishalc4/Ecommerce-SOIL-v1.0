@@ -48,7 +48,6 @@ function EditProfile() {
     
     function handleFirstNameChange(e) {
         setUserDetails({...userDetails, firstName: e.target.value.replace(/\s/g, '')});
-        console.log(userDetails);
     }
 
     function handleLastNameChange(e) {
