@@ -3,4 +3,16 @@
 .about-container{
     width: $common-width;
     padding: $common-padding;
+   
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  
+  .about-container > div {
+    margin-bottom: 20px;
+  }
+  
+  /* You can add more specific styles as needed */
+  
 }
