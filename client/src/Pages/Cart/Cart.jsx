@@ -20,7 +20,7 @@ function Cart() {
         if (userCart) {                                    // if the user has a cart, get the cart data (productId and Quantity)
             setCartData(userCart.data);
         }
-    }, [userCart]);
+    }, [user]);
 
     function getProductById(productId) {
         return productsList.find(product => product.productId === productId);    // get the product detail from productlist using the productId stored in cart
@@ -35,6 +35,7 @@ function Cart() {
             }
         });
         setPrice(total);
+        window.dispatchEvent(new Event('userDataUpdated'));
     }
 
     useEffect(() => {
