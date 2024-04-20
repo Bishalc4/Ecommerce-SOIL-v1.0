@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types'
 import "./DailyMealPlan.scss"
+import MealCard from '../MealCard/MealCard';
 
 function DailyMealPlan(props) {
     const day = props.day;
@@ -10,15 +11,13 @@ function DailyMealPlan(props) {
     const userIndex = mealsArray.findIndex(user => user.username === currUser);
 
     const meals = mealsArray[userIndex].diet[day];
-    console.log(day, meals.Breakfast)
 
     return(
         <div className='day-container'>
             <h1>{day}</h1>
             {Object.entries(meals).map(([mealName, mealValue]) => (
                     <div key={mealName}>
-                        <h3>{mealName}</h3>
-                        <p>{mealValue}</p>
+                        {mealValue && <MealCard recipe={mealValue} />}
                     </div>
             ))}
         </div>

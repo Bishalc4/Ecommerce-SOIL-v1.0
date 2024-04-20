@@ -20,8 +20,6 @@ function DietNutrition(){
         userProfileIndex++;
     }
 
-    console.log(currUser);
-
     const [profileDetails, setProfileDetails] = useState({
         age: currUserProfile ? currUserProfile.age : "",
         sex: currUserProfile ? currUserProfile.sex : "male",
@@ -238,14 +236,20 @@ function DietNutrition(){
                     <RecipeSearch/>
                 )}
             </div>
-            <div className="meal-plan-row">
-                {showInputs ? (
+
+            {showInputs ? (
                     <>
                     </>
                 ) : (
-                    <MealPlan />
-                )}
-            </div>
+                    <div className="meal-plan-row">
+                        {showInputs ? (
+                            <>
+                            </>
+                        ) : (
+                            <MealPlan />
+                        )}
+                    </div>
+            )}
         </ div>
     );
 }

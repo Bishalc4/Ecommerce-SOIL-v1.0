@@ -68,7 +68,6 @@ function AddToMealPopUp({onClose, id}) {
 
   return (
     <div className="add-to-meal-pop-up-container">
-      <p>{value}</p>
       <form>
           <select value={meal.day} onChange={handleDayChange}>
             <option value="Monday">Monday</option>

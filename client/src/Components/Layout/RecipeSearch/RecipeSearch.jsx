@@ -112,7 +112,6 @@ function RecipeSearch() {
     }
 
     function handleGetRecipes() {
-
         const queryFilters = getQueryFilters();
         fetch(`https://api.edamam.com/api/recipes/v2?type=public&q=${query.queryText}&app_id=${appId}&app_key=${appKey}${queryFilters}`)
           .then(response => response.json())
