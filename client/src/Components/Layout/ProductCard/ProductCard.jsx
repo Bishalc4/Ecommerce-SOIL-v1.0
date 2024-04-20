@@ -18,7 +18,14 @@ function ProductCard(props) {
             <Link to="/product" state={{ product: props.product, productImage: image}}>
                 <img src={image} alt="Product Image"/>
             </Link>
-                <h1>${productPrice}</h1>            
+            {productSpecialPrice !== null ? (
+                <>
+                    <h1>${productSpecialPrice}</h1>
+                </>
+            ): (
+                <h1>${productPrice}</h1>
+            )}
+            
             <p>{productName}</p>
             <div className="cartButton-container" >
             <AddCartButton productId={props.product.productId} />
