@@ -1,4 +1,5 @@
 // import Infographic from "../../assets/Infographic.png"
+import { Link } from 'react-router-dom';
 import DietNutritionImage from "../../assets/DietNutritionImage.jpg"
 import "./Home.scss"
 
@@ -11,11 +12,13 @@ function Home() {
                     <h1>SOIL</h1>
                     <p>
                         At SOIL, we’re passionate about offering
-                        premium, organic, and fresh food. At SOIL,
-                        we’re passionate about offering premium,
-                        organic, and fresh food.
+                        premium, organic, and fresh food. We’re
+                        dedicated to sourcing the finest ingredients
+                        for your healthy lifestyle.
                     </p>
-                    <button className="read-more-btn">Read More</button>
+                    <Link to="/about">
+                        <button className="read-more-btn">Read More</button>
+                    </Link>
                 </div>
             </div>
 
@@ -34,7 +37,9 @@ function Home() {
                         Emphasize the importance of incorporating a variety
                         of nutrient-dense foods into their diet.
                     </p>
-                    <button>Read More</button>
+                    <Link to="/dietnutrition">
+                        <button>Learn more</button>
+                    </Link>
                 </div>
             </div>
 
@@ -47,7 +52,9 @@ function Home() {
                             and fresh food. At Soil, we’re passionate about offering
                             premium, organic, and fresh food.
                         </p>
-                        <button>Read More</button>
+                        <Link to="/growityourself">
+                            <button>Read More</button>
+                        </Link>
                     </div>
                 </div>
             </div>
