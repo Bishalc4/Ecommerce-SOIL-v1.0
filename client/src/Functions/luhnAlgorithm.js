@@ -15,7 +15,10 @@ function luhnAlgorithm(cardNumber) {
         doubleUp = !doubleUp;
     }
 
-    return sum % 10 === 0;
+    if(sum % 10 === 0) {
+        return true;
+    }
+    return false;
 }
 
 export default luhnAlgorithm;

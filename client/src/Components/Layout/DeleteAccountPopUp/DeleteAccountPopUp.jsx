@@ -3,7 +3,13 @@ import "./DeleteAccountPopUp.scss"
 function DeleteAccountPopUp({onClose}) {
 
     function deleteAccount() {
-        console.log("delete account - homepage")
+        console.log("delete account - homepage");
+        const user = JSON.parse(localStorage.getItem("user"));           // get current logged in user
+        const cart = JSON.parse(localStorage.getItem("cart")) || [];    // get current cart
+
+        const updateUser = cart.filter(item => item.username !== user);
+        localStorage.setItem("users", JSON.stringify(updateUser));
+
     }
 
     function close() {
