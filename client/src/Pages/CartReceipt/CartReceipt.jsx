@@ -6,12 +6,16 @@ import './CartReceipt.scss';
 function CartReceipt() {
     const location = useLocation();
     const { price , cartData, shippingAddress } = location.state;
+    const user = JSON.parse(localStorage.getItem("user"));           // get current logged in user
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];    // get current cart
 
     const productsList = JSON.parse(localStorage.getItem("products"));  // get the list of products from local storage
 
     function getProductById (productId) {
         return productsList.find(product => product.productId === productId);    // get the product detail from productlist using the productId stored in cart
     }
+    const updatedCart = cart.filter(item => item.username !== user);  // removing user cart from localstorage after successful purchase
+    localStorage.setItem("cart", JSON.stringify(updatedCart));
 
     return (
         <div className="receipt-container">
