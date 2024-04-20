@@ -17,6 +17,7 @@ function DailyMealPlan(props) {
             <h1>{day}</h1>
             {Object.entries(meals).map(([mealName, mealValue]) => (
                     <div key={mealName}>
+                        {/* also pass the day of the week */}
                         {mealValue && <MealCard recipe={mealValue} />}
                     </div>
             ))}

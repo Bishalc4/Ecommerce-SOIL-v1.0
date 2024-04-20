@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom'
 import { useState } from "react";
 import { ToastContainer, toast } from 'react-toastify';
+import DeleteAccountPopUp from '../../Components/Layout/DeleteAccountPopUp/DeleteAccountPopUp';
 import 'react-toastify/dist/ReactToastify.css';
 import "./EditProfile.scss"
 
@@ -20,6 +21,12 @@ function EditProfile() {
         userAccountIndex++;
     }
 
+    const [showPopup, setShowPopup] = useState(false);
+
+    const handleClick = () => {
+        setShowPopup(true);
+    };
+
     const resetChanges = () => {
         setUserDetails({
             username: currUserAccount.username,
@@ -37,8 +44,11 @@ function EditProfile() {
                                     resetChanges();
                                     toast("Profile changes canceled!");
     };
-
-    const passwordNavigation = () => navigate("/passwordchange");
+    
+    const passwordNavigation = (e) => {
+        e.preventDefault();
+        navigate("/passwordchange");
+};
     
     const [userDetails, setUserDetails] = useState({username: currUserAccount.username,
                                                     email: currUserAccount.email,
@@ -93,10 +103,17 @@ function EditProfile() {
                         theme="dark"
                     />
                 </div>
-                <div className='password-container'>
+                <div className='account-changes-btns'>
                     <button className='password-btn' onClick={passwordNavigation}>Change password</button>
+                    <button className='delete-btn' onClick={handleClick}>Delete Account</button>
                 </div>
             </form>
+            {showPopup && (
+                    <>
+                        <div className="overlay" onClick={() => setShowPopup(false)}></div>
+                        <DeleteAccountPopUp onClose={() => setShowPopup(false)}/>
+                    </>
+            )}
         </div>
     );
 }

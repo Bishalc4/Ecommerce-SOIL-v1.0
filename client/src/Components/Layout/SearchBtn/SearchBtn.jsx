@@ -13,7 +13,7 @@ function SearchBtn(){
 
     return(
         <div className="search-box">
-            <input type="text" placeholder="Search..." value={inputValue} onChange={handleInputValueChange}/>
+            <input type="text" placeholder="Search..." value={inputValue} onChange={handleInputValueChange} required/>
             <Link to="/search" state={{query: inputValue}}>
                 <IoSearch className="search-icon"/>
             </Link>

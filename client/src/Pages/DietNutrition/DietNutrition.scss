@@ -4,8 +4,6 @@ $input-background: rgb(255, 255, 255);
 $input-checked: black;
 
 .diet-container{
-    width: $common-width;
-    padding: $common-padding;
     color: $font-color;
     display: flex;
     flex: 1;
@@ -154,6 +152,7 @@ $input-checked: black;
     }
 
     .recipe-search-row{
+        padding-top: 2%;
         width: 100%;
     }
 
@@ -162,6 +161,5 @@ $input-checked: black;
         display: flex;
         flex-direction: column;
         align-items: center;
-        height: 80vh;
     }
 }

@@ -1,6 +1,7 @@
 import DailyMealPlan from "../DailyMealPlan/DailyMealPlan";
 import "./MealPlan.scss"
 
+//this page controls the actual structure of the meal plan
 function MealPlan() {
     return(
         <div className="meal-container">

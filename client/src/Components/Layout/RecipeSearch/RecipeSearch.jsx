@@ -1,5 +1,6 @@
 import { useState } from "react";
 import RecipeCard from "../Recipe/RecipeCard";
+import { IoSearch } from "react-icons/io5";
 import "./RecipeSearch.scss"
 
 function RecipeSearch() {
@@ -9,7 +10,6 @@ function RecipeSearch() {
     const appKey = "a36807d73b336db98850d7a307c3f226";
 
     const [query, setQuery] = useState({queryText: "",
-                                        dietLabel: "", //default [from macros]
                                         healthLabel: "", //default [from macros]
                                         mealType: "",
                                         caloriesMinimum: "", //e.g. 100-300, 400 (max 400), 200+ (over 200) [from macros]
@@ -22,10 +22,6 @@ function RecipeSearch() {
     
     function handleQueryText(e) {
         setQuery({...query, queryText: e.target.value});
-    }
-
-    function handleDietLabel(e) {
-        setQuery({...query, dietLabel: e.target.value});
     }
 
     function handleHealthLabel(e) {
@@ -62,9 +58,6 @@ function RecipeSearch() {
     
     function getQueryFilters() {
         var filter = "";
-        if (query.dietLabel != "") {
-            filter+= "&diet=" + query.dietLabel;
-        }
 
         if (query.healthLabel != "") {
             filter+= "&health=" + query.healthLabel;
@@ -126,67 +119,55 @@ function RecipeSearch() {
 
     return(
         <div className="recipe-search-container">
-            <h1>Recipes</h1>
             <div className="search-container">
-                <label>Search </label>
-                <input type="search" placeholder=" Recipe or ingredient" value={query.queryText} onChange={handleQueryText} required/>
-                <button onClick={handleGetRecipes}>Search</button>
+                <input type="text" placeholder="Search recipe or ingredient" value={query.queryText} onChange={handleQueryText} required/>
+                <IoSearch className="search-icon" onClick={handleGetRecipes}/>
             </div>
             <div className="search-filters">
-                <div>
-                    <label htmlFor="dietLabel">Special dietary</label>
-                    {/* change the name of this */}
-                    <select id="dietLabel" name="dietLabel" value={query.dietLabel} onChange={handleDietLabel}>
-                        <option value="">--</option>
-                        <option value="high-fiber">High-fiber</option>
-                        <option value="high-protein">High-protein</option>
-                        <option value="low-carb">Low-carb</option>
-                        <option value="low-fat">Low-fat</option>
-                        <option value="low-sodium">Low-sodium</option>
-                    </select>
+                <div className="meal-preferences-row">
+                    <div>
+                        <label htmlFor="healthLabel">Dietary Preferences</label>
+                        <select id="healthLabel" name="healthLabel" value={query.healthLabel} onChange={handleHealthLabel}>
+                            <option value="">--</option>
+                            <option value="alcohol-free">Alcohol-free</option>
+                            <option value="dairy-free">Dairy-free</option>
+                            <option value="egg-free">Low-carb</option>
+                            <option value="fish-free">Low-fat</option>
+                            <option value="gluten-free">Gluten-free</option>
+                            <option value="keto-friendly">Keto-friendly</option>
+                            <option value="low-sugar">Low-sugar</option>
+                            <option value="vegan">Vegan</option>
+                            <option value="vegetarian">Vegetarian</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label htmlFor="mealType">Meal</label>
+                        <select id="mealType" name="mealType" value={query.mealType} onChange={handleMealType}>
+                            <option value="">--</option>
+                            <option value="Breakfast">Breakfast</option>
+                            <option value="Lunch">Lunch</option>
+                            <option value="Dinner">Dinner</option>
+                            <option value="Snack">Snack</option>
+                        </select>
+                    </div>
                 </div>
-                <div>
-                    <label htmlFor="healthLabel">Dietary Preferences</label>
-                    <select id="healthLabel" name="healthLabel" value={query.healthLabel} onChange={handleHealthLabel}>
-                        <option value="">--</option>
-                        <option value="alcohol-free">Alcohol-free</option>
-                        <option value="dairy-free">Dairy-free</option>
-                        <option value="egg-free">Low-carb</option>
-                        <option value="fish-free">Low-fat</option>
-                        <option value="gluten-free">Gluten-free</option>
-                        <option value="keto-friendly">Keto-friendly</option>
-                        <option value="low-sugar">Low-sugar</option>
-                        <option value="vegan">Vegan</option>
-                        <option value="vegetarian">Vegetarian</option>
-                    </select>
-                </div>
-                <div>
-                    <label htmlFor="mealType">Meal</label>
-                    <select id="mealType" name="mealType" value={query.mealType} onChange={handleMealType}>
-                        <option value="">--</option>
-                        <option value="Breakfast">Breakfast</option>
-                        <option value="Lunch">Lunch</option>
-                        <option value="Dinner">Dinner</option>
-                        <option value="Snack">Snack</option>
-                    </select>
-                </div>
-                <div>
+                <div className="calorie-preferences-row">
                     <span>Calories</span>
-                    <input id="caloriesMinimum" type="number" min="1" step="1" value={query.caloriesMinimum} onChange={handleCaloriesMinimum}/>
+                    <input id="caloriesMinimum" type="number" min="1" step="1" value={query.caloriesMinimum} placeholder="Min calories" onChange={handleCaloriesMinimum}/>
                     <span>-</span>
-                    <input id="caloriesMaximum" type="number" min={query.caloriesMinimum + 1} step="1" value={query.caloriesMaximum} onChange={handleCaloriesMaximum}/>
+                    <input id="caloriesMaximum" type="number" min={query.caloriesMinimum + 1} step="1" value={query.caloriesMaximum} placeholder="Max calories" onChange={handleCaloriesMaximum}/>
                 </div>
-                <div>
+                <div className="protein-preferences-row">
                     <span>Protein</span>
-                    <input id="proteinMinimum" type="number" min="1" step="1" value={query.proteinMinimum} onChange={handleProteinMinimum}/>
+                    <input id="proteinMinimum" type="number" min="1" step="1" value={query.proteinMinimum} placeholder="Min protein" onChange={handleProteinMinimum}/>
                     <span>-</span>
-                    <input id="proteinMaximum" type="number" min={query.proteinMinimum + 1} step="1" value={query.proteinMaximum} onChange={handleProteinMaximum}/>
+                    <input id="proteinMaximum" type="number" min={query.proteinMinimum + 1} step="1" value={query.proteinMaximum} placeholder="Max protein" onChange={handleProteinMaximum}/>
                 </div>
-                <div>
+                <div className="carbohydrate-preferences-row">
                     <span>Carbohydrates</span>
-                    <input id="carbohydratesMinimum" type="number" min="1" step="1" value={query.carbohydratesMinimum} onChange={handleCarbohydratesMinimum}/>
+                    <input id="carbohydratesMinimum" type="number" min="1" step="1" value={query.carbohydratesMinimum} placeholder="Min carbohydrates" onChange={handleCarbohydratesMinimum}/>
                     <span>-</span>
-                    <input id="carbohydratesMaximum" type="number" min={query.carbohydratesMinimum + 1} step="1" value={query.carbohydratesMaximum} onChange={handleCarbohydratesMaximum}/>
+                    <input id="carbohydratesMaximum" type="number" min={query.carbohydratesMinimum + 1} step="1" value={query.carbohydratesMaximum} placeholder="Max carbohydrates" onChange={handleCarbohydratesMaximum}/>
                 </div>
             </div>
             {showRecipes ? (
