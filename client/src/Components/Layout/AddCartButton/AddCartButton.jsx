@@ -37,6 +37,7 @@ function AddCartButton ( {productId}) {
     }
 
     localStorage.setItem("cart", JSON.stringify(existingCart));
+    window.dispatchEvent(new Event('userDataUpdated'));
     toast.success("Product added to cart!");
     }
 }
