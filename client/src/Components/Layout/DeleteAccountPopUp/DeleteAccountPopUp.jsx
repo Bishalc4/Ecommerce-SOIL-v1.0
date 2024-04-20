@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom'
 import "./DeleteAccountPopUp.scss"
 
+// eslint-disable-next-line react/prop-types
 function DeleteAccountPopUp({onClose}) {
     const navigate = useNavigate();
 
