@@ -1,4 +1,6 @@
-import { Link, useNavigate} from "react-router-dom"
+import { Link, useNavigate} from "react-router-dom";
+import { toast, ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 function AddCartButton ( {productId}) {
     const navigate = useNavigate();
@@ -35,11 +37,15 @@ function AddCartButton ( {productId}) {
     }
 
     localStorage.setItem("cart", JSON.stringify(existingCart));
+    toast.success("Product added to cart!");
     }
 }
 
     return (
+        <>
             <button onClick={handleClick}>Add to cart</button>
+            <ToastContainer  closeButton={false} style={{ marginTop: '150px' }}/>
+        </>
     );
 
 }
