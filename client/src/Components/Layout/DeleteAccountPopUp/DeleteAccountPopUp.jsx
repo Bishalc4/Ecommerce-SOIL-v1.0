@@ -1,22 +1,40 @@
+import { useNavigate } from 'react-router-dom'
 import "./DeleteAccountPopUp.scss"
 
 function DeleteAccountPopUp({onClose}) {
+    const navigate = useNavigate();
 
     function deleteAccount() {
-        console.log("delete account - homepage");
-        const user = JSON.parse(localStorage.getItem("user"));           // get current logged in user
-        const cart = JSON.parse(localStorage.getItem("cart")) || [];    // get current cart
+        const user = JSON.parse(localStorage.getItem("user"));
 
-        const updateUser = cart.filter(item => item.username !== user);
-        localStorage.setItem("users", JSON.stringify(updateUser));
+        const users = JSON.parse(localStorage.getItem("users")) || [];
+        const updateUsers = users.filter(item => item.username !== user);
+        localStorage.setItem("users", JSON.stringify(updateUsers));
 
+        const macros = JSON.parse(localStorage.getItem("macros")) || [];
+        const updateMacros = macros.filter(item => item.username !== user);
+        localStorage.setItem("macros", JSON.stringify(updateMacros));
+
+        const meals = JSON.parse(localStorage.getItem("meals")) || [];
+        const updateMeals = meals.filter(item => item.username !== user);
+        localStorage.setItem("meals", JSON.stringify(updateMeals));
+
+        const profiles = JSON.parse(localStorage.getItem("profiles")) || [];
+        const updateProfiles = profiles.filter(item => item.username !== user);
+        localStorage.setItem("profiles", JSON.stringify(updateProfiles));
+
+        const cart = JSON.parse(localStorage.getItem("cart")) || [];
+        const updateCart = cart.filter(item => item.username !== user);
+        localStorage.setItem("cart", JSON.stringify(updateCart));
+
+        localStorage.removeItem("user");
+
+        navigate("/");
     }
 
     function close() {
         onClose();
     }
-
-    //function to close
 
     return(
         <div className="delete-account-container">
