@@ -8,7 +8,7 @@ function Navbar() {
             <nav className="navbar">
                 <ul>
                     <li>
-                        <Link to="/">
+                        <Link to="/browse">
                             <FiMenu />
                             <span>Browse</span>
                         </Link>

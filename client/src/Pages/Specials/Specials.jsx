@@ -5,7 +5,6 @@ import "./Specials.scss";
 
 //Special deals page - displays products on sale
 function Specials(){
-
     const [product, setProduct] = useState([]);
 
     useEffect(() => {
