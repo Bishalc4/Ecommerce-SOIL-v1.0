@@ -21,9 +21,6 @@ function Profile() {
     const handleSignOut = () => {
         if (localStorage.getItem("user")) {
             localStorage.removeItem("user");
-            console.log("user key has been removed - sign out successful")
-        } else {
-            console.log("user key does not exist - sign out unsuccessful")
         }
     }
 
