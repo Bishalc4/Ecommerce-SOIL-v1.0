@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { ToastContainer, toast } from 'react-toastify';
 import RecipeSearch from "../../Components/Layout/RecipeSearch/RecipeSearch.jsx"
 import MealPlan from "../../Components/Layout/MealPlan/MealPlan.jsx";
 import { calculateMacros } from "../../Functions/MacrosCalculator"
@@ -19,13 +20,16 @@ function DietNutrition(){
         userProfileIndex++;
     }
 
-    const [profileDetails, setProfileDetails] = useState({age: currUserProfile.age,
-                                                        sex: currUserProfile.sex,
-                                                        weight: currUserProfile.weight,
-                                                        height: currUserProfile.height,
-                                                        activityLevel: currUserProfile.activityLevel,
-                                                        healthGoals: currUserProfile.healthGoals
-                                                        });
+    console.log(currUser);
+
+    const [profileDetails, setProfileDetails] = useState({
+        age: currUserProfile ? currUserProfile.age : "",
+        sex: currUserProfile ? currUserProfile.sex : "male",
+        weight: currUserProfile ? currUserProfile.weight : "",
+        height: currUserProfile ? currUserProfile.height : "",
+        activityLevel: currUserProfile ? currUserProfile.activityLevel : "moderate",
+        healthGoals: currUserProfile ? currUserProfile.healthGoals : "maintain"
+    });
 
     const [showInputs, setShowInputs] = useState(true); //to show the macros, recipe search etc.
     const [macros, setMacros] = useState(null); //stores curr user's macros requirements
@@ -103,6 +107,12 @@ function DietNutrition(){
 
     function handleProfileSaveChanges(e) {
         e.preventDefault();
+
+        if (currUser === null) {
+            nullUserSubmission();
+            return;
+        }
+
         profilesArray[userProfileIndex].age = profileDetails.age;
         profilesArray[userProfileIndex].sex = profileDetails.sex;
         profilesArray[userProfileIndex].height = profileDetails.height;
@@ -116,6 +126,8 @@ function DietNutrition(){
         setShowInputs(false);
     }
 
+    const nullUserSubmission = () => toast("Please login to continue!");
+
     return(
         <div className="diet-container">
             {/* <div className="landing-row">
@@ -127,7 +139,7 @@ function DietNutrition(){
             <form className="goals-form"  onSubmit={handleProfileSaveChanges}>
                 <div className="column">
                     <h2>Age</h2>
-                    <input type="number" min="1" step="1" max="80" onChange={handleAgeChange} value={profileDetails.age} required></input>
+                    <input type="number" min="1" step="1" max="80" onChange={handleAgeChange} value={profileDetails.age}  placeholder="Please enter your age" required></input>
                     <h2>Sex</h2>
                     <div className="sex-container">
                         <input type="radio" id="male" name="sex" onChange={handleSexChange} checked={profileDetails.sex === "male"} value="male" required/>
@@ -137,9 +149,9 @@ function DietNutrition(){
                         <label htmlFor="female" className="buttton-style">Female</label>
                     </div>
                     <h2>Height (cm)</h2>
-                    <input type="number" min="100" step="0.01" onChange={handleHeightChange} value={profileDetails.height} required></input>
+                    <input type="number" min="100" step="0.01" onChange={handleHeightChange} value={profileDetails.height} placeholder="Please enter your height" required></input>
                     <h2>Weight (kg)</h2>
-                    <input type="number" min="30" step="0.01" onChange={handleWeightChange} value={profileDetails.weight} required></input>
+                    <input type="number" min="30" step="0.01" onChange={handleWeightChange} value={profileDetails.weight} placeholder="Please enter your weight" required></input>
                 </div>
                 <div className="column">
                     <h2>Activity level</h2>
@@ -191,6 +203,18 @@ function DietNutrition(){
                         </div>
                     </div>
                     <button type="submit">Calculate macros</button>
+                    <ToastContainer
+                        position="top-right"
+                        autoClose={5000}
+                        hideProgressBar={true}
+                        newestOnTop={true}
+                        closeOnClick
+                        rtl={false}
+                        pauseOnFocusLoss
+                        draggable
+                        pauseOnHover
+                        theme="dark"
+                    />
                 </div>
             </form>
             <div className="macros-row">
