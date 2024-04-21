@@ -89,7 +89,7 @@ function EditProfile() {
                 </div>
                 <div className='form-buttons-container'>
                     <button className='cancelBtn' onClick={cancelChanges}>Cancel</button>
-                    <button type="submit">Save Changes</button>
+                    <button className='submitBtn' type="submit">Save Changes</button>
                     <ToastContainer
                         position="top-right"
                         autoClose={5000}
