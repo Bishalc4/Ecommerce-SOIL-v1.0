@@ -58,11 +58,28 @@
         height: 50vh;
         background-color: #68B691;
         display: flex;
+        flex-direction: column;
         align-items: center;
-        justify-content: center;
+        justify-content: space-around;
 
-        img{
-            height: 80%;
+        .infographic-row{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+
+            .infographic-section{
+                color: white;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                width: 30%;
+
+                img{
+                    width: 30%;
+                    height: auto;
+                }
+            }
+
         }
     }
 
