@@ -3,6 +3,7 @@ import "./MealPlan.scss"
 
 //this page controls the actual structure of the meal plan
 function MealPlan() {
+
     return(
         <div className="meal-container">
             <h1>Your Weekly Meal Plan</h1>

@@ -129,6 +129,22 @@ function DietNutrition(){
 
     const nullUserSubmission = () => toast("Please login to continue!");
 
+    const [rerender, setRerender] = useState(false);
+
+    useEffect(() => {
+        const updateMealPlan = () => {
+            console.log("meal plan change")
+            setRerender(prev => !prev);
+            //cause the page to re-render here
+        }
+
+        window.addEventListener('mealPlanChange', updateMealPlan)
+
+        return () => {
+            window.removeEventListener('mealPlanChange', updateMealPlan);
+        };
+    }, []);
+
     return(
         <div className="diet-container">
             {/* <div className="landing-row">

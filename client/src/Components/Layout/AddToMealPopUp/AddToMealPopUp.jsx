@@ -56,6 +56,9 @@ function AddToMealPopUp({onClose, id}) {
   function addMeal(e) { //when this function is called cause the 
     e.preventDefault();
     addMealForDay(meal.day, meal.meal, value);
+    setTimeout(() => {
+      window.dispatchEvent(new Event('mealPlanChange'));
+    }, 0);
   }
   
   function handleDayChange(e) {
