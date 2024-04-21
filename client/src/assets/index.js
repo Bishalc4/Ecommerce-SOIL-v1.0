@@ -18,6 +18,19 @@ import zucchini from "./ProductsImage/zucchini.jpg";
 import kiwi from "./ProductsImage/kiwi.jpg";
 import mango from "./ProductsImage/mango.jpg";
 import lemon from "./ProductsImage/lemon.jpg";
+import milk from "./ProductsImage/milk.jpg";
+import egg from "./ProductsImage/egg.jpg";
+import cheese from "./ProductsImage/cheese.jpg";
+import yogurt from "./ProductsImage/yogurt.jpg";
+import beef from "./ProductsImage/beef.jpg";
+import chicken from "./ProductsImage/chicken.jpg";
+import pork from "./ProductsImage/pork.jpg";
+import turkey from "./ProductsImage/turkey.jpg";
+import quinoa from "./ProductsImage/quinoa.jpg";
+import barley from "./ProductsImage/barley.jpg";
+import lentils from "./ProductsImage/lentils.jpg";
+import chickpeas from "./ProductsImage/chickpeas.jpg";
+import peas from "./ProductsImage/peas.jpg";
 
 const images = {
     apple,
@@ -39,7 +52,20 @@ const images = {
     zucchini,
     kiwi,
     mango,
-    lemon
+    lemon,
+    milk,
+    egg,
+    cheese,
+    yogurt,
+    beef,
+    chicken,
+    pork,
+    turkey,
+    quinoa,
+    barley,
+    lentils,
+    chickpeas,
+    peas
 };
 
 export default images;

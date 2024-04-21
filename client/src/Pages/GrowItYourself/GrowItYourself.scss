@@ -31,9 +31,10 @@
     }
     img {
         width: 100%;
+        height: 600px;
     }
 
-    .carrot-table {
+    .tomato-table {
         width: 100%;
         border-collapse: collapse;
         margin-top: 20px;
@@ -44,21 +45,21 @@
         margin-top: 20px;
     }
     
-    .carrot-table th,
+    .tomato-table th,
     .potato-table th,
     .potato-table td,
-    .carrot-table td {
+    .tomato-table td {
         border: 2px solid #ddd;
         padding: 8px;
         text-align: left;
     }
     
-    .carrot-table th,
+    .tomato-table th,
     .potato-table th {
         background-color: #f2f2f2;
     }
  
-    .carrot-table tbody tr:hover {
+    .tomato-table tbody tr:hover {
         background-color: #f2f2f2;
     }
     .potato-table tbody tr:hover {

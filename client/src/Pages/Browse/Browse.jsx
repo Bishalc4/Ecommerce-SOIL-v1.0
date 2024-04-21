@@ -29,6 +29,24 @@ function Browse() {
                     .map((item, index) => (
                     <ProductCard key={index} product={item} image={images[item.imageUrl]} />
                 ))}
+                <h2 className='dairies'>Dairy</h2>
+                {product
+                    .filter(item => item.category === "Dairy") //if productName contains the query string
+                    .map((item, index) => (
+                    <ProductCard key={index} product={item} image={images[item.imageUrl]} />
+                ))}
+                <h2 className='meat'>Meat</h2>
+                {product
+                    .filter(item => item.category === "Meat") //if productName contains the query string
+                    .map((item, index) => (
+                    <ProductCard key={index} product={item} image={images[item.imageUrl]} />
+                ))}
+                <h2 className='grains'>Grains</h2>
+                {product
+                    .filter(item => item.category === "Grains") //if productName contains the query string
+                    .map((item, index) => (
+                    <ProductCard key={index} product={item} image={images[item.imageUrl]} />
+                ))}
             </div>
         </div>
     );

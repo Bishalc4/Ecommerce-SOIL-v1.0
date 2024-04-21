@@ -11,6 +11,7 @@ export { default as EditProfile } from "./EditProfile/EditProfile";
 export { default as Product } from "./Product/Product";
 export { default as CartCheckOut } from './CartCheckOut/CartCheckOut';
 export { default as CartReceipt } from './CartReceipt/CartReceipt';
-export { default as Search } from './Search/Search'
-export { default as Browse } from './Browse/Browse'
+export { default as Search } from './Search/Search';
+export { default as Browse } from './Browse/Browse';
+export { default as ChangePassword } from './ChangePassword/ChangePassword'
 export { default as NotFound } from "./NotFound/NotFound";
