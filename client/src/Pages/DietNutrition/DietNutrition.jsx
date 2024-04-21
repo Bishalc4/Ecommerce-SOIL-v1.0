@@ -8,13 +8,13 @@ import "./DietNutrition.scss"
 //Page for diet and nutrition
 function DietNutrition(){
     const currUser = JSON.parse((localStorage.getItem("user"))); //get curr user
-    var profilesArray = JSON.parse(localStorage.getItem("profiles")); //get "profiles" from localStorage
+    var profilesArray = JSON.parse(localStorage.getItem("profiles")) || []; //get "profiles" from localStorage
 
     let currUserProfile = null;
     let userProfileIndex = 0; //index of the current user within the profilesArray
     for (const user of profilesArray) {
         if (user.username === currUser) { //makes currUserProfile the curr users object from the profilesArray
-            currUserProfile = user; 
+            currUserProfile = user;
             break;
         }
         userProfileIndex++;
