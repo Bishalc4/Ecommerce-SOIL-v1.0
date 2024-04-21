@@ -179,17 +179,17 @@ function RecipeSearch() {
                 </div>
             </div>
             {showRecipes ? (
-                <div className="recipe-container">
+                <>
                     {recipes.length === 0 ? ( // Check if recipes array is empty
                         <h2>Please try again</h2> // Render heading if recipes array is empty
                     ) : (
-                        <ul>
+                        <ul className="recipes-container">
                             {recipes.map((recipe, index) => (
                                 <RecipeCard key={index} recipe={recipe.recipe} />
                             ))}
                         </ul>
                     )}
-                </div>
+                </>
             ) : (
                 <></>
             )}
