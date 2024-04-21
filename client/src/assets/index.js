@@ -7,7 +7,6 @@ import carrot from "./ProductsImage/carrot.jpg";
 import orange from "./ProductsImage/orange.jpg";
 import broccoli from "./ProductsImage/broccoli.jpg";
 import spinach from "./ProductsImage/spinach.jpg";
-import grapes from "./ProductsImage/grapes.jpg";
 import lettuce from "./ProductsImage/lettuce.jpg";
 import strawberry from "./ProductsImage/strawberry.jpg";
 import bell_pepper from "./ProductsImage/bell_pepper.jpg";
@@ -42,7 +41,6 @@ const images = {
     orange,
     broccoli,
     spinach,
-    grapes,
     lettuce,
     strawberry,
     bell_pepper,

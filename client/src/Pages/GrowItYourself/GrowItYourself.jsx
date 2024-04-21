@@ -11,7 +11,7 @@ function GrowItYourself() {
             <img src={Vegetable_Gardening} alt="Vegetable Garden" />
             <h2>Vegetables to Grow in Your Backyard</h2>
             <div className="section">
-                <h3>Essential Needes to Grow Organic Vegetables:</h3>
+                <h3>Essential Needs to Grow Organic Vegetables:</h3>
                 <p>
                     <strong>Sunshine:</strong> Most vegetables require full sun during the day. It's important to plant them in your backyard where the sun is not blocked by other objects.
                 </p>
@@ -20,17 +20,17 @@ function GrowItYourself() {
                     Adding one or more forms of organic matter promotes the healthiest soil for vegetable growth and development.
                 </p>
                 <p>
-                    <strong>Seeds or Seedlings:</strong> Decide whether you want to start from seeds or purchase young seedlings. For beginners, seedlings is the better option.
+                    <strong>Seeds or Seedlings:</strong> Decide whether you want to start from seeds or purchase young seedlings. For beginners, seedlings are the better option.
                 </p>
                 <p>
                     <strong>Watering:</strong> Maintain a consistent watering schedule. Water in the morning to allow the soil to dry during the day.
                 </p>
                 <p>
-                    <strong>Space:</strong> There are many different ways to plant your vegertable – garden beds, plots in the ground, planters, pots, vertical gardens, and more.
+                    <strong>Space:</strong> There are many different ways to plant your vegetables – garden beds, plots in the ground, planters, pots, vertical gardens, and more.
                 </p>
 
                 <p>
-                    <strong>Fertiliser:</strong> Use organic Fertiliser to fed the vegetables planted as they are the best and safest for your vegertables. 
+                    <strong>Fertiliser:</strong> Use organic Fertiliser to feed the vegetables planted as they are the best and safest for your vegetables. 
                 </p>
                 <br></br>
                 <h2>Farming tools you may need:</h2>
@@ -45,7 +45,7 @@ function GrowItYourself() {
                         <strong>Hoe:</strong> Useful for weeding and cultivating the soil.
                     </p>
                     <p>
-                        <strong>Watering Can:</strong> Essential for watering your vegertable regularly.
+                        <strong>Watering Can:</strong> Essential for watering your vegetables regularly.
                     </p>
                     <p>
                         <strong>Farming Gloves:</strong> Protect your hands from blisters.
@@ -54,7 +54,7 @@ function GrowItYourself() {
                         <strong>Wheelbarrow:</strong> Useful for transporting soil, plants, and other materials around your backyard.
                     </p>
                     <p>
-                        <strong>pH Meter:</strong> Helps to monitor soil pH levels, ensuring vegetable are growing to it's full potential.
+                        <strong>pH Meter:</strong> Helps to monitor soil pH levels, ensuring vegetables are growing to their full potential.
                     </p>
             </div>
 
