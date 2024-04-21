@@ -157,6 +157,7 @@ function DietNutrition(){
                 </p>
             </div> */}
             <form className="goals-form"  onSubmit={handleProfileSaveChanges}>
+                {/* inspiration from "https://gainsbybrains.com/pages/macro-calculator" */}
                 <div className="column">
                     <h2>Age</h2>
                     <input type="number" min="1" step="1" max="80" onChange={handleAgeChange} value={profileDetails.age}  placeholder="Please enter your age" required></input>
@@ -237,19 +238,6 @@ function DietNutrition(){
                     />
                 </div>
             </form>
-            {/* <div className="macros-row">
-                {showInputs ? (
-                    <>
-                    </>
-                ) : (
-                    <div className="macros-container">
-                        <h1>{macros.calories} calories per day</h1>
-                        <h2>Protein {macros.protein} grams per day</h2>
-                        <h2>Fat {macros.fat} grams per day</h2>
-                        <h2>Carbohydrate {macros.carbohydrates} grams per day</h2>
-                    </div>
-                )}
-            </div> */}
             <div className="macros-row">
                 {macros !== null && !showInputs && (
                     <div className="macros-container">

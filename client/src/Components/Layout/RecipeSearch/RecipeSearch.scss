@@ -12,7 +12,7 @@ $input-checked: black;
     background-repeat: no-repeat;
     background-position: center;
     background-image: url("../../../assets/recipeBackground.jpg");
-    height: 35vh;
+    height: 45vh;
 
     input[type="number"]{
         height: 10%;
@@ -69,19 +69,85 @@ $input-checked: black;
     }
 
     .search-filters{
-        padding-top: 1%;
         display: flex;
         flex-direction: column;
         align-items: center;
         width: 25%;
         color: black;
 
-        .meal-preferences-row, .calorie-preferences-row, .protein-preferences-row, .carbohydrate-preferences-row{
+        h3{
+            font-weight: 400;
+            margin-top: 0;
+            margin-bottom: 2%;
+        }
+
+        .calorie-row, .protein-row, .carbohydrate-row{
+            width: 100%;
+
+            .calorie-preferences-row, .protein-preferences-row, .carbohydrate-preferences-row {
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                padding-bottom: 2%;
+
+                input{
+                    width: 45%;
+                }
+            }
+        }
+
+        .meal-preferences-row{
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            padding-bottom: 2%;
+            padding-top: 2%;
+
+            .dietary-preferences-input, .meal-preferences-input{
+                width: 50%;
+            }
+
+            
+
+            select{
+                width: 95%;
+                padding: 2%;
+                font-size: 16px;
+                border: 2px solid #DEDFDC;
+                border-radius: 5px;
+                background-color: white;
+                color: $font-color;
+                outline: none;
+            }
+
+            option {
+                font-size: 16px;
+                background-color: #fff;
+                color: #3a474e;
+            }
+            
+            option:hover {
+                background-color: #899195;
+                color: white;
+            }
+            
+            select:hover {
+                border-color: #899195;
+            }
+            
+            select:focus {
+                border-color: #3a474e;
+            }
+            
+        }
+
+        .calorie-preferences-row, .protein-preferences-row, .carbohydrate-preferences-row{
             display: flex;
             flex-direction: row;
             justify-content: space-between;
             width: 100%;
-            padding-bottom: 2%;
+            padding-bottom: 4%;
         }
 
         input {
