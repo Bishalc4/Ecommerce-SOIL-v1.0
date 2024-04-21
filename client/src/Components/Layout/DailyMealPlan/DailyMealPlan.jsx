@@ -15,12 +15,11 @@ function DailyMealPlan(props) {
     return(
         <div className='day-container'>
             <h1>{day}</h1>
-            {Object.entries(meals).map(([mealName, mealValue]) => (
-                    <div key={mealName}>
-                        {/* also pass the day of the week */}
-                        {mealValue && <MealCard recipe={mealValue} />}
-                    </div>
-            ))}
+            <div className='day-content'>
+                {Object.entries(meals).map(([mealName, mealValue]) => (
+                    mealValue && <MealCard key={mealName} recipe={mealValue}/>
+                ))}
+            </div>
         </div>
     );
 }
