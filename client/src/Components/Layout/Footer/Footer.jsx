@@ -10,40 +10,40 @@ function Footer() {
     <footer className='footer-container'>
         <div className="about-links-container" id="footer-column">
             <h4>About SOIL</h4>
-            <Link to="/">
+            <Link to="/about">
               <p>About us</p>
             </Link>
-            <Link to="/">
-              <p>Careers</p>
+            <Link to="/browse">
+              <p>Organic Products</p>
             </Link>
-            <Link to="/">
-              <p>Contact us</p>
+            <Link to="specials">
+              <p>Special Weeks</p>
             </Link>
         </div>
 
         <div className="help-column" id="footer-column">
             <h4>Help</h4>
-            <Link to="/">
-              <p>FAQ</p>
+            <Link to="/dietnutrition">
+              <p>Meal Planner</p>
             </Link>
-            <Link to="/">
-              <p>Blog</p>
+            <Link to="/cart">
+              <p>Cart</p>
             </Link>
-            <Link to="/">
-              <p>Support</p>
+            <Link to="/growityourself">
+              <p>Vegetabel Farming</p>
             </Link>
         </div>
 
         <div className="helpful-link-column" id="footer-column">
             <h4>Helpful Links</h4>
-            <Link to="/about">
-              <p>About us</p>
+            <Link to="/editprofile">
+              <p>Edit Profile</p>
             </Link>
-            <Link to="/">
-              <p>Careers</p>
+            <Link to="/login">
+              <p>Login</p>
             </Link>
-            <Link to="/">
-              <p>Contact us</p>
+            <Link to="/signup">
+              <p>SignUp</p>
             </Link>
         </div>
 
