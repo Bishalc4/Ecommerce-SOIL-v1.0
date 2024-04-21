@@ -30,6 +30,8 @@ function DeleteAccountPopUp({onClose}) {
 
         localStorage.removeItem("user");
 
+        localStorage.removeItem("showInputs")
+
         navigate("/");
     }
 
