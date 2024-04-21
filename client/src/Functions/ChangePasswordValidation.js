@@ -8,7 +8,7 @@ function validate(values) {
     if (!values.currPassword) {
         errors.currPassword = 'Password is required'; }   
     
-    if(currUser && values.currPassword !== updatedUserPassword[usersIndex].password) {
+    if(currUser && values.currPassword !== users[usersIndex].password) {
             errors.currPassword = "Password is incorrect";                                 // check if new password matches with the password stored in localstorage
         }
     
