@@ -43,6 +43,7 @@ function MealCard({recipe}) {
                         <a href={recipeData.recipe.url} target="_blank" rel="noopener noreferrer">
                             <img src={recipeData.recipe.image} alt={recipeData.recipe.label} />
                         </a>
+                        <button className='delete-meal-btn'>Delete meal</button>
                     </div>
                 </div>
             )}

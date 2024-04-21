@@ -53,7 +53,7 @@ function AddToMealPopUp({onClose, id}) {
     });
   };
 
-  function addMeal(e) {
+  function addMeal(e) { //when this function is called cause the 
     e.preventDefault();
     addMealForDay(meal.day, meal.meal, value);
   }
