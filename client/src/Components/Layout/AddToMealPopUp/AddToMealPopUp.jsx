@@ -51,7 +51,7 @@ function AddToMealPopUp({onClose, id}) {
     });
   };
 
-  function addMeal(e) { //when this function is called cause the 
+  function addMeal(e) {
     e.preventDefault();
     addMealForDay(meal.day, meal.meal, value);
     setTimeout(() => {

@@ -5,6 +5,8 @@ import "./DeleteAccountPopUp.scss"
 function DeleteAccountPopUp({onClose}) {
     const navigate = useNavigate();
 
+    //gets each key from the local storage and removes the currUser from it
+    //this is important as our local storage is able to handle multiple users and is not limited to one user
     function deleteAccount() {
         const user = JSON.parse(localStorage.getItem("user"));
 

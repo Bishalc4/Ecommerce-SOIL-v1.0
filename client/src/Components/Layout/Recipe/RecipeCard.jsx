@@ -14,8 +14,6 @@ function RecipeCard(recipe) {
     //const percentageDailyCalories = 100 * (recipeCalories/macros.calories);
 
     return(
-        // make it so that if the user clicks on any part of the div aside from the button
-        // it takes them to a recipe component that displays information about the recipe
         <div className="recipe-card-container">
             <h2>{recipe.recipe.label}</h2>
             <img src={recipe.recipe.image} alt={recipe.recipe.label} />

@@ -33,6 +33,8 @@ function MealCard({recipe, meal, day}) {
       });
 
     const recipeID = recipe;
+
+    //API information -> change this to your personal API id and key if needed
     const app_id = "c57a8075";
     const app_key = "a36807d73b336db98850d7a307c3f226";
     const recipeURL = `https://api.edamam.com/api/recipes/v2/${recipeID}?type=public&app_id=${app_id}&app_key=${app_key}`;
@@ -46,7 +48,8 @@ function MealCard({recipe, meal, day}) {
                     [meal]: null
                 }
             };
-    
+
+            //set time out gives enough time for the meals to be set in local storage
             setTimeout(() => {
               mealsArray[userAccountIndex].diet = updatedPlan;
               localStorage.setItem("meals", JSON.stringify(mealsArray));
@@ -58,6 +61,7 @@ function MealCard({recipe, meal, day}) {
     function deleteP() {
         deleteMeal();
         setTimeout(() => {
+            //communicated with the even listener in the diet nutrition page
             window.dispatchEvent(new Event('mealPlanChange'));
         }, 0);
     }

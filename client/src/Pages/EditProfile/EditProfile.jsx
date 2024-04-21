@@ -36,6 +36,7 @@ function EditProfile() {
         });
     };
 
+    //react toastify messages
     const profileChange = () => toast("Profile details changed!");
     const usernameChange = () => toast("Cannot change username");
     const emailChange = () => toast("Cannot change email");

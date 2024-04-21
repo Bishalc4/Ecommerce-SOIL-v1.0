@@ -3,9 +3,11 @@ import PropTypes from 'prop-types';
 import AddToMealPopUp from "../AddToMealPopUp/AddToMealPopUp"
 import "./AddMealBtn.scss"
 
+//button that causes the trigger of the add to meal pop up
 function AddMealBtn(props) {
   const [showPopup, setShowPopup] = useState(false);
 
+  //trigger the display of the add to meak pop up
   const handleClick = () => {
     setShowPopup(true);
   };

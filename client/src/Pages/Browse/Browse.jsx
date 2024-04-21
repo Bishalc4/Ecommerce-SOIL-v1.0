@@ -19,31 +19,31 @@ function Browse() {
             <div className="products-grid-container">
                 <h2>Fruits</h2>
                 {product
-                    .filter(item => item.category === "Fruits") //if productName contains the query string
+                    .filter(item => item.category === "Fruits")
                     .map((item, index) => (
                     <ProductCard key={index} product={item} image={images[item.imageUrl]} />
                 ))}
                 <h2 className='vegetables'>Vegetables</h2>
                 {product
-                    .filter(item => item.category === "Vegetables") //if productName contains the query string
+                    .filter(item => item.category === "Vegetables")
                     .map((item, index) => (
                     <ProductCard key={index} product={item} image={images[item.imageUrl]} />
                 ))}
                 <h2 className='dairies'>Dairy</h2>
                 {product
-                    .filter(item => item.category === "Dairy") //if productName contains the query string
+                    .filter(item => item.category === "Dairy")
                     .map((item, index) => (
                     <ProductCard key={index} product={item} image={images[item.imageUrl]} />
                 ))}
                 <h2 className='meat'>Meat</h2>
                 {product
-                    .filter(item => item.category === "Meat") //if productName contains the query string
+                    .filter(item => item.category === "Meat")
                     .map((item, index) => (
                     <ProductCard key={index} product={item} image={images[item.imageUrl]} />
                 ))}
                 <h2 className='grains'>Grains</h2>
                 {product
-                    .filter(item => item.category === "Grains") //if productName contains the query string
+                    .filter(item => item.category === "Grains")
                     .map((item, index) => (
                     <ProductCard key={index} product={item} image={images[item.imageUrl]} />
                 ))}

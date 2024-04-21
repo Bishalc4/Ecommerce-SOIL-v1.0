@@ -3,14 +3,16 @@ import PropTypes from 'prop-types'
 import "./DailyMealPlan.scss"
 import MealCard from '../MealCard/MealCard';
 
+//this is the content of each day in the meal plan (e.g. sunday -> sunday heading and associated meals)
 function DailyMealPlan(props) {
     const day = props.day;
 
+    //get current user and meals from local storage
     const currUser = JSON.parse(localStorage.getItem("user") || 'null');
     var mealsArray = JSON.parse(localStorage.getItem("meals") || '[]');
 
+    //retrieve the meals for the day
     const userIndex = mealsArray.findIndex(user => user.username === currUser);
-
     const meals = mealsArray[userIndex].diet[day];
 
     return(
