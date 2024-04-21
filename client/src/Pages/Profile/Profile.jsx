@@ -22,6 +22,7 @@ function Profile() {
         if (localStorage.getItem("user")) {
             localStorage.removeItem("user");
         }
+        localStorage.removeItem("showInputs")
     }
 
     return(
