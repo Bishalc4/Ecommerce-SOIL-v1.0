@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { ToastContainer, toast } from 'react-toastify';
 import RecipeSearch from "../../Components/Layout/RecipeSearch/RecipeSearch.jsx"
 import MealPlan from "../../Components/Layout/MealPlan/MealPlan.jsx";
@@ -135,6 +135,7 @@ function DietNutrition(){
         const updateMealPlan = () => {
             console.log("meal plan change")
             setRerender(prev => !prev);
+            myDivRef.current.scrollIntoView({ behavior: 'smooth' }); //makes it so that the meal plan is scrolled to
             //cause the page to re-render here
         }
 
@@ -144,6 +145,8 @@ function DietNutrition(){
             window.removeEventListener('mealPlanChange', updateMealPlan);
         };
     }, []);
+
+    const myDivRef = useRef(null);
 
     return(
         <div className="diet-container">
@@ -270,7 +273,7 @@ function DietNutrition(){
                     <>
                     </>
                 ) : (
-                    <div className="meal-plan-row">
+                    <div className="meal-plan-row" ref={myDivRef}>
                         {showInputs ? (
                             <>
                             </>

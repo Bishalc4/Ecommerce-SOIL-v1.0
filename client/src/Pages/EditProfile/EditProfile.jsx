@@ -109,10 +109,10 @@ function EditProfile() {
                 </div>
             </form>
             {showPopup && (
-                    <>
-                        <div className="overlay" onClick={() => setShowPopup(false)}></div>
-                        <DeleteAccountPopUp onClose={() => setShowPopup(false)}/>
-                    </>
+                <>
+                    <div className="overlay" onClick={() => setShowPopup(false)}></div>
+                    <DeleteAccountPopUp onClose={() => setShowPopup(false)}/>
+                </>
             )}
         </div>
     );
