@@ -129,7 +129,7 @@ function RecipeSearch() {
                         <div>
                             <label htmlFor="healthLabel">Dietary Preferences</label>
                             <select id="healthLabel" name="healthLabel" value={query.healthLabel} onChange={handleHealthLabel}>
-                                <option value=""></option>
+                                <option value="">None</option>
                                 <option value="alcohol-free">Alcohol-free</option>
                                 <option value="dairy-free">Dairy-free</option>
                                 <option value="egg-free">Low-carb</option>
@@ -144,7 +144,7 @@ function RecipeSearch() {
                         <div>
                             <label htmlFor="mealType">Meal</label>
                             <select id="mealType" name="mealType" value={query.mealType} onChange={handleMealType}>
-                                <option value=""></option>
+                                <option value="">None</option>
                                 <option value="Breakfast">Breakfast</option>
                                 <option value="Lunch">Lunch</option>
                                 <option value="Dinner">Dinner</option>
