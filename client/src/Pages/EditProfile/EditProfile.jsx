@@ -48,7 +48,7 @@ function EditProfile() {
     
     const passwordNavigation = (e) => {
         e.preventDefault();
-        navigate("/passwordchange");
+        navigate("/changepassword");
 };
     
     const [userDetails, setUserDetails] = useState({username: currUserAccount.username,
