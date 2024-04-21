@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import { FiMenu } from "react-icons/fi";
 import "./Navbar.scss"
 
 function Navbar() {
@@ -9,7 +8,6 @@ function Navbar() {
                 <ul>
                     <li>
                         <Link to="/browse">
-                            <FiMenu />
                             <span>Browse</span>
                         </Link>
                     </li>
