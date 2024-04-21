@@ -61,26 +61,26 @@ function Footer() {
             stewardship for all.
           </p>
           <div className="social-media-container">
-            <Link to="#">
+            <a href="https://www.facebook.com">
               <div id="logo-container">
                 <FaFacebook id="social-media-logo" />
               </div>
-            </Link>
-            <Link to="#">
+            </a>
+            <a href="https://www.twitter.com">
               <div id="logo-container">
                 <FaSquareXTwitter id="social-media-logo" />
               </div>
-            </Link>
-            <Link to="#">
+            </a>
+            <a href="https://www.instagram.com">
               <div id="logo-container">
                 <AiFillInstagram id="social-media-logo" />
               </div>
-            </Link>
-            <Link to="#">
+            </a>
+            <a href="https://www.youtube.com">
               <div id="logo-container">
                 <FaYoutube id="social-media-logo" />
               </div>
-            </Link>
+            </a>
           </div>
         </div>
     </footer>
