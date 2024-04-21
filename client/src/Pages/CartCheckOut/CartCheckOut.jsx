@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import validate from '../../Functions/CreditCardValidation';
 import validateAddress from '../../Functions/AdressValidation'
@@ -95,7 +95,7 @@ function CartCheckOut() {
                         <h3>Payment Details </h3>
                     </div>
                     <div className="amount">
-                        <h4> Amount : </h4>
+                        <h4> Amount: </h4>
                         <label className="price">${price.toFixed(2)}</label>
                     </div>
                 </header>
