@@ -18,7 +18,7 @@ function DailyMealPlan(props) {
             <h1>{day}</h1>
             <div className='day-content'>
                 {Object.entries(meals).map(([mealName, mealValue]) => (
-                    mealValue && <MealCard key={mealName} recipe={mealValue}/>
+                    mealValue && <MealCard key={mealName} recipe={mealValue} meal={mealName} day={day}/>
                 ))}
             </div>
         </div>

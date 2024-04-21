@@ -81,8 +81,8 @@ function EditProfile() {
                     <input value={userDetails.username} onClick={usernameChange} readOnly></input>
                 </div>
                 <div className="name-container">
-                    <input value={userDetails.firstName} onChange={handleFirstNameChange} required></input>
-                    <input value={userDetails.lastName} onChange={handleLastNameChange} required></input>
+                    <input value={userDetails.firstName} onChange={handleFirstNameChange} placeholder='First name' required></input>
+                    <input value={userDetails.lastName} onChange={handleLastNameChange} placeholder='Last name' required></input>
                 </div>
                 <div className="email-group">
                     <input type="email" value={userDetails.email} onClick={emailChange} readOnly></input>

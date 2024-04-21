@@ -21,7 +21,6 @@ function AddToMealPopUp({onClose, id}) {
 
   const [mealPlan, setMealPlan] = useState(() => {
     const storedMealPlan = mealsArray[userAccountIndex].diet;
-    console.log(storedMealPlan);
     return storedMealPlan ? storedMealPlan : { //this should only be used for when there is no currUser
       Sunday: { Breakfast: null, Lunch: null, Dinner: null },
       Monday: { Breakfast: null, Lunch: null, Dinner: null },
@@ -34,7 +33,6 @@ function AddToMealPopUp({onClose, id}) {
   });
 
   const addMealForDay = (day, mealType, newMeal) => {
-    console.log(`Updating ${day} ${mealType} with ${newMeal}`);
     setMealPlan(prevPlan => {
         const updatedPlan = {
             ...prevPlan,
