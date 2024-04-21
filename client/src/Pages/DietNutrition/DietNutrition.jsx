@@ -160,7 +160,7 @@ function DietNutrition(){
                 {/* inspiration from "https://gainsbybrains.com/pages/macro-calculator" */}
                 <div className="column">
                     <h2>Age</h2>
-                    <input type="number" min="1" step="1" max="80" onChange={handleAgeChange} value={profileDetails.age}  placeholder="Please enter your age" required></input>
+                    <input type="number" min="18" step="1" max="80" onChange={handleAgeChange} value={profileDetails.age}  placeholder="Please enter your age" required></input>
                     <h2>Sex</h2>
                     <div className="sex-container">
                         <input type="radio" id="male" name="sex" onChange={handleSexChange} checked={profileDetails.sex === "male"} value="male" required/>
