@@ -39,17 +39,10 @@ function Product() {
                                 <h1>${productPrice}</h1>
                             </>
                         )}
-                        
-                        <AddCartButton productId={location.state.product.productId} className={`add-to-cart-btn ${productSpecialPrice !== null ? 'special' : 'original'}`} /> {/* add to cart component goes here */}
+                        <AddCartButton productId={location.state.product.productId} className={`add-to-cart-btn ${productSpecialPrice !== null ? 'special' : 'original'}`} />
                     </div>
                 </div>
             </div>
-            <div className="product-about">
-                    <h1>Product Details</h1>
-                    <p>Sweet, juicy flavour. These organic mangoes have yellow
-                       skin with deep pink blush and firm flesh. 
-                    </p>
-                </div>
         </div>
     );
 }
