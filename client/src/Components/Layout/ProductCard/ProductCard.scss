@@ -24,6 +24,16 @@
 
     p{
         font-size: 115%;
+        text-decoration: none;
+        color: $font-color;
+    }
+
+    p:hover{
+        text-decoration:underline
+    }
+
+    a{
+        text-decoration: none;
     }
 
     img{

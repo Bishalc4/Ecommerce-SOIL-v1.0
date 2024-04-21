@@ -25,8 +25,9 @@ function ProductCard(props) {
             ): (
                 <h1>${productPrice}</h1>
             )}
-            
-            <p>{productName}</p>
+            <Link to="/product" state={{ product: props.product, productImage: image}}>
+                <p>{productName}</p>
+            </Link>
             <div className="cartButton-container" >
             <AddCartButton productId={props.product.productId} />
             </div>
