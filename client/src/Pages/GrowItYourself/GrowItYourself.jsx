@@ -1,5 +1,7 @@
 import React from 'react';
 import Vegetable_Gardening from '../../assets/Vegetable-Gardening.jpg'
+import Potato_farming from "../../assets/potato-farming.jpg"
+import Tomato_farming from "../../assets/tomato-farming.jpg"
 import './GrowItYourself.scss';
 
 function GrowItYourself() {
@@ -24,13 +26,45 @@ function GrowItYourself() {
                     <strong>Watering:</strong> Maintain a consistent watering schedule. Water in the morning to allow the soil to dry during the day.
                 </p>
                 <p>
-                    <strong>Space:</strong> There are many different ways to plant your veggies – garden beds, plots in the ground, planters, pots, vertical gardens, and more.
+                    <strong>Space:</strong> There are many different ways to plant your vegertable – garden beds, plots in the ground, planters, pots, vertical gardens, and more.
                 </p>
+
+                <p>
+                    <strong>Fertiliser:</strong> Use organic Fertiliser to fed the vegetables planted as they are the best and safest for your vegertables. 
+                </p>
+                <br></br>
+                <h2>Farming tools you may need:</h2>
+                    <p>
+                        <strong>Shovel:</strong> For digging holes for planting, mixing soil, and moving dirt.
+                    </p>
+                   
+                    <p>
+                        <strong>Rake:</strong> Helps to level soil.
+                    </p>
+                    <p>
+                        <strong>Hoe:</strong> Useful for weeding and cultivating the soil.
+                    </p>
+                    <p>
+                        <strong>Watering Can:</strong> Essential for watering your vegertable regularly.
+                    </p>
+                    <p>
+                        <strong>Farming Gloves:</strong> Protect your hands from blisters.
+                    </p>
+                    <p>
+                        <strong>Wheelbarrow:</strong> Useful for transporting soil, plants, and other materials around your backyard.
+                    </p>
+                    <p>
+                        <strong>pH Meter:</strong> Helps to monitor soil pH levels, ensuring vegetable are growing to it's full potential.
+                    </p>
             </div>
 
-            <h2>Example of How to Grow a Vegetable in Your Backyard</h2>
-            <h3>Carrot</h3>
-            <table className="carrot-table">
+            <h2>Example of How to Grow a Organic Vegetable in Your Backyard</h2>
+            <h2>Tomato</h2>
+            <img src={Tomato_farming} alt="Tomato Farming" />
+            <br></br>
+            <br></br>
+            <strong>Information on how to grow Tomatos</strong>
+            <table className="tomato-table">
                 <thead>
                     <tr>
                         <th>Attribute</th>
@@ -40,23 +74,23 @@ function GrowItYourself() {
                 <tbody>
                     <tr>
                         <td>Harvest Time</td>
-                        <td>2-3 months </td>
+                        <td>2-3 months</td>
                     </tr>
                     <tr>
                         <td>Ideal Temperatures</td>
-                        <td>All year round</td>
+                        <td>Warm temperatures, between 21-29°C</td>
                     </tr>
                     <tr>
                         <td>Planting Time</td>
-                        <td>Late summer to early autumn</td>
+                        <td>Late spring through early summer</td>
                     </tr>
                     <tr>
                         <td>Spacing</td>
-                        <td>approximately 15.24 - 45.72 cm </td>
+                        <td>45-60 cm apart</td>
                     </tr>
                     <tr>
                         <td>Germination Time</td>
-                        <td>2-15 days</td>
+                        <td>5-10 days</td>
                     </tr>
                     <tr>
                         <td>Light Preference</td>
@@ -64,7 +98,11 @@ function GrowItYourself() {
                     </tr>
                 </tbody>
             </table>
-            <h3>Potato</h3>
+            <h2>Potato</h2>
+            <img src={Potato_farming} alt="Potato Farming"/>
+            <br></br>
+            <br></br>
+            <strong>Information on how to grow Potatos</strong>
             <table className="potato-table">
                 <thead>
                     <tr>
