@@ -54,8 +54,8 @@ function AddCartButton ( {productId} ) {
         </>
     );
 }
-AddCartButton.PropTypes = {
-    productId: PropTypes.string
+AddCartButton.propTypes = {
+    productId: PropTypes.number
 }
 
 export default AddCartButton
