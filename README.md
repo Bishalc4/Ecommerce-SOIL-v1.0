@@ -1,4 +1,4 @@
-# s4003909-s4009432-a1
+# SOIL v1.0
 
 How to run the application:
 1. cd client
